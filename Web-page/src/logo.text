@@ -1,0 +1,3 @@
+<div className="pt-12 flex items-center justify-center">
+        <img className="w-16 sm:w-40 2xl:w-90" src="logo.png" alt="Logo"></img>
+      </div>

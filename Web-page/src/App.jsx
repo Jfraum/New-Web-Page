@@ -1,23 +1,32 @@
 export default function App() {
   return (
-    <body className="min-h-screen">
-      <div class="pt-12 flex items-center justify-center">
-        <img className="w-32 h-28" src="logo.png" alt="Logo"></img>
+    <>
+    <body className="bg-white">
+      <div className="pt-8 flex items-center justify-center">
+          <img className="w-16 sm:w-40 2xl:w-96" src="logo.png" alt="Logo"/>
+      </div>
+      <div className="flex flex-col items-center justify-center pt-12 lg:px-96">
+
+        <div className="flex justify-center items-center m-3 w-56 lg:w-full h-12 lg:h-28 bg-gray-900 hover:bg-gray-800 rounded-full"> 
+          <a className="text-white font-bold text-xl lg:text-5xl">
+            Photography
+          </a>
         </div>
 
-        <nav>
-          <div className="pt-36 flex flex-row ">
-            <button className="h-screen basis-1/2 box-border text-2xl bg-gradient-to-r from-purple-500 to-pink-500">
-              Photography
-            </button>
-            <button className="basis-1/2 box-border text-2xl bg-gradient-to-r from-pink-500 to-purple-500 ">
-              Code
-            </button>
+        <div className="flex justify-center items-center m-3 w-56 lg:w-full h-12 lg:h-28 bg-gray-900 hover:bg-gray-800 rounded-full">
+          <a className="text-white font-bold text-xl lg:text-5xl">
+            Code
+          </a>
+        </div>
 
-          </div>
+        <div className="flex justify-center items-center m-3 w-56 lg:w-full h-12 lg:h-28 bg-gray-900 hover:bg-gray-800 rounded-full">
+          <a className="text-white font-bold text-xl lg:text-5xl"> 
+            Design 
+          </a>
+        </div>
 
-        </nav>
-    </body>
-
+      </div>
+      </body>
+    </>
   )
 }
