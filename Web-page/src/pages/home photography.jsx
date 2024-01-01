@@ -6,7 +6,7 @@ export default function HomeP () {
     return (
         <> 
          <body className="bg-white">
-            <div> { Navbar } </div>
+            <Navbar />
          </body>
         </>
     )
