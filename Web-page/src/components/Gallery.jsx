@@ -1,17 +1,24 @@
-import React from "react";
+import React from 'react';
+import Gallery from '../../public/Glerifer/Gallery';
 
-import gleriferP from "../../public/Glerifer/gleriferP";
+const GleriferP = () => {
+  const images = [
+    {
+      url: 'public/Glerifer/0.jpg',
+    },
+    {
+      url: 'public/Glerifer/1.jpg',
+    },
+    {
+      url: 'public/Glerifer/2.jpg',
+    },
+  ];
 
-export default function Gallery ( { images }) {
+  return (
+    <div>
+      <Gallery images={images} />
+    </div>
+  );
+};
 
-    return (
-        <>
-        <div>
-            {Images &&
-            images.map((imagesUrl) =>
-            <img src={imagesUrl} />
-            )}
-        </div>
-        </>
-    )
-}
+export default GleriferP;
