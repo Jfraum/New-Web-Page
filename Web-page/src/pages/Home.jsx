@@ -1,10 +1,18 @@
+import React from "react";
+import { IKContext, IKImage } from "imagekitio-react";
+
+
 export default function Home() {
   
     return (
       <>
       <body className="bg-1e1e1e w-screen h-screen">
         <div className="pt-8 flex items-center justify-center">
-            <img className="w-16 sm:w-36 2xl:w-96" src="logo.png" alt="Logo"/>
+      
+          <IKContext publicKey="public_uOVFRhFppXpYrQdII5ome8vMYy0=" urlEndpoint="https://ik.imagekit.io/f10c3to17/" transformationPosition="path" authenticationEndpoint="http://www.yourserver.com/auth"/>
+            
+          <IKImage path=" https://ik.imagekit.io/f10c3to17/home%20photos/Logo/Logo%20SVG.svg?updatedAt=1704316803289 " transformation={[{"height": "300", "width": "400"}]} />
+
         </div>
         <div className="flex flex-col items-center justify-center pt-12 lg:px-96">
   
@@ -30,3 +38,5 @@ export default function Home() {
     </>
     )
   }
+
+ 

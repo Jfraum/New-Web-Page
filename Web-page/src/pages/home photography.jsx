@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../components/navbar";
-import GleriferP from "../components/Gallery";
 
 export default function HomeP () {
     
@@ -8,9 +7,6 @@ export default function HomeP () {
         <>
         <body className="bg-1e1e1e h-screen w-screen">
             <Navbar />
-            <div>
-            <GleriferP />
-            </div>
         </body>
         </>
     )
