@@ -6,11 +6,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false )
   
   return (
-    <>
     <nav>
       <div className='flex flex-col md:flex-row items-center justify-around pt-3 md:pt-5'>
         <div className='z-50 w-full md:w-auto flex items-center justify-between px-5'>
-          <img src='logo.png' alt='logo' className='cursor-pointer w-16 md:w-20 xl:w-32 2xl:w-52'/>
+            <img src='logo.png' alt='logo' className='cursor-pointer w-16 md:w-20 xl:w-32 2xl:w-52'/>
             <div className='text-4xl md:hidden' onClick={() => setOpen (!open)}>
               <ion-icon name={`${ open ? 'close' : 'menu'}`}></ion-icon>
             </div>
@@ -48,9 +47,7 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-
       </div>
     </nav>
-    </>
   )
 }
