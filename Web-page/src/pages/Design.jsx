@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../components/navbar";
 
-export default function HomeP () {
+export default function HomeD () {
     
     return (
-        <>
-        <body className="bg-1e1e1e h-screen w-screen">
+        <> 
+         <body className="bg-white">
             <Navbar />
-        </body>
+         </body>
         </>
     )
 }
