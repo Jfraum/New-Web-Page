@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Navlinks from './Navlinks';
 
-export default function Navbar() {
+export default function Nav () {
 
   const [open, setOpen] = useState(false )
   
@@ -10,7 +11,7 @@ export default function Navbar() {
     <nav className=' w-full py-5 md:flex md:flex-row md:items-center md:justify-between '>
         <div className='flex md:flex-row items-center justify-between'>
           <div className='flex'>
-              <img src='logo.png' alt='logo' className='flex cursor-pointer pl-5 md:px-5 w-32' path="/"/>
+              <img src='logo.png' alt='logo' className='flex pl-5 md:px-5 w-32'/>
           </div>
 
           <div className='flex text-4xl md:hidden px-3' onClick={() => setOpen (!open)}>
@@ -22,69 +23,26 @@ export default function Navbar() {
         
         <ul className=' text-sm md:text-lg lg:text-xl 2xl:text-xl pr-10 md:flex  hidden'>
           <li className='flex px-2'>
-            <Link to="/" className='px-3  text-eacdc2'>
+            <Link to="/" className='flex items-center px-3 md:cursor-pointer  text-eacdc2 hover:opacity-50'>
               Home
             </Link>
-
-            <Link to="/" className=' px-3 text-eacdc2'>
-              Portafolio
-            </Link>
-
-            <Link to="/HomeD" className=' px-3  text-eacdc2'>
-              Design
-            </Link>
-
-            <Link to="/HomeC" className=' px-3  text-eacdc2'>
-              Code
-            </Link>
-
-            <Link to="/" className=' px-3  text-eacdc2'>
-              About
-            </Link>
-         
-            <Link to="/" className=' px-3 inline-block text-eacdc2'>
-              Contact
-            </Link>
-          </li>
+            </li>
+            <Navlinks />
         </ul>
 
         {/* Mobile nav */}
 
-        <div className={`flex justify-center text-center md:hidden rounded-lg border bg-1e1e1e
+        <div className={` z-10 absolute flex mt-10 justify-center text-center md:hidden  bg-1e1e1e w-full h-full duration-500
       
-      ${open ? '' : 'hidden'}`}>
+      ${open ? 'left-0' : 'left-[-100%]'}`}>
 
-        <ul className='mx-10'>
+        <ul className=''>
           <li>
             <Link to="/" className=' py-7 px-3 inline-block text-eacdc2'>
                 Home
             </Link>
           </li>
-          <li>
-          <Link to="/" className='py-7 px-3 inline-block text-eacdc2'>
-              Portafolio
-            </Link>
-          </li>
-          <li>
-          <Link to="/" className='py-7 px-3 inline-block text-eacdc2'>
-              Design
-            </Link>
-          </li>
-          <li>
-          <Link to="/" className='py-7 px-3 inline-block text-eacdc2'>
-              Code
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className='py-7 px-3 inline-block text-eacdc2'>
-                About
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className='py-7 px-3 inline-block text-eacdc2'>
-                Contact
-            </Link>
-          </li>
+        <Navlinks />
         </ul>
 
         </div>
