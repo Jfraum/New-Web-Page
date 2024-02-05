@@ -10,7 +10,8 @@ export default function HomeP () {
         <body className="bg-1e1e1e bg-auto">
             
                 <Nav />
-        
+
+            
             <IndexImages />
           
 

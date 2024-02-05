@@ -11,7 +11,7 @@ export default function Nav () {
     <nav className=' w-full py-5 md:flex md:flex-row md:items-center md:justify-between '>
         <div className='flex md:flex-row items-center justify-between'>
           <div className='flex'>
-              <img src='logo.png' alt='logo' className='flex pl-5 md:px-5 w-32'/>
+              <img src='/public/logo.png' alt='logo' className='flex pl-5 md:px-5 w-32'/>
           </div>
 
           <div className='flex text-4xl md:hidden px-3' onClick={() => setOpen (!open)}>
