@@ -32,21 +32,21 @@ export default function App(){
             <Route path="/HomeP" element={<HomeP />}></Route>
             <Route path="/HomeC" element={<HomeC />}></Route>
             <Route path="/HomeD" element={<HomeD />}></Route>
-            <Route path="/HomeP/StephannyP" element={<StephannyP />}></Route>
-            <Route path="/HomeP/AlessandraP" element={<AlessandraP />}></Route>
-            <Route path="/HomeP/AnaP" element={<AnaP />}></Route>
-            <Route path="/HomeP/MariaFP" element={<MariaFP />}></Route>
-            <Route path="/HomeP/BarbaraP" element={<BarbaraP />}></Route>
-            <Route path="/HomeP/Glerifer2P" element={<Glerifer2P />}></Route>
-            <Route path="/HomeP/NeonDemonP" element={<NeonDemonP />}></Route>
-            <Route path="/HomeP/GleriferP" element={<GleriferP />}></Route>
-            <Route path="/HomeP/IsabelP" element={<IsabelP />}></Route>
-            <Route path="/HomeP/MetroP" element={<MetroP />}></Route>
-            <Route path="/HomeP/MaferP" element={<MaferP />}></Route>
-            <Route path="/HomeP/SunshineP" element={<SunshineP />}></Route>
-            <Route path="/HomeP/Mid2000s" element={<Mid2000sP />}></Route>
-            <Route path="/HomeP/StreetP" element={<StreetP />}></Route>
-            <Route path="/HomeP/SunmodelP" element={<SunmodelP />}></Route>
+            <Route path="/StephannyP" element={<StephannyP />}></Route>
+            <Route path="/AlessandraP" element={<AlessandraP />}></Route>
+            <Route path="/AnaP" element={<AnaP />}></Route>
+            <Route path="/MariaFP" element={<MariaFP />}></Route>
+            <Route path="/BarbaraP" element={<BarbaraP />}></Route>
+            <Route path="/Glerifer2P" element={<Glerifer2P />}></Route>
+            <Route path="/NeonDemonP" element={<NeonDemonP />}></Route>
+            <Route path="/GleriferP" element={<GleriferP />}></Route>
+            <Route path="/IsabelP" element={<IsabelP />}></Route>
+            <Route path="/MetroP" element={<MetroP />}></Route>
+            <Route path="/MaferP" element={<MaferP />}></Route>
+            <Route path="/SunshineP" element={<SunshineP />}></Route>
+            <Route path="/Mid2000s" element={<Mid2000sP />}></Route>
+            <Route path="/StreetP" element={<StreetP />}></Route>
+            <Route path="/SunmodelP" element={<SunmodelP />}></Route>
 
 
         </Routes>

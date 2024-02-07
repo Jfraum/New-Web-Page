@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../../components/navbar";
 import MetroG from "../../../public/Metro";
+import Footer from "../../components/footer";
 
 
 
@@ -16,6 +17,8 @@ export default function MetroP () {
                 <Nav />
 
             <MetroG />
+
+            <Footer />
 
 
         </body>

@@ -1,6 +1,7 @@
 import React from "react";
 import IndexImages from "../components/Imagenes";
 import Nav from "../components/navbar";
+import Footer from "../components/footer";
 
 
 
@@ -13,6 +14,8 @@ export default function HomeP () {
 
             
             <IndexImages />
+
+            <Footer />
           
 
         </body>

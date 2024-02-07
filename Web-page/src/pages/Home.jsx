@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/footer";
 
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
     return (
 
       
-      <body className=" bg-1e1e1e w-screen h-screen">
+      <div className=" bg-1e1e1e w-screen h-screen">
 
         <div className="pt-8 flex items-center justify-center">
       
@@ -32,8 +33,10 @@ export default function Home() {
               Design 
             </a>
           </div>
+          <Footer />
         </div>
-      </body>
+       
+      </div>
     )
   }
 

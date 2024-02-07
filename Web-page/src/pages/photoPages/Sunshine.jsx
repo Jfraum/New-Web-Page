@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../../components/navbar";
 import SunshineG from "../../../public/SunshineG";
+import Footer from "../../components/footer";
 
 
 
@@ -17,7 +18,7 @@ export default function SunshineP () {
 
             <SunshineG />
 
-
+            <Footer />
         </body>
     )
 }
