@@ -11,7 +11,7 @@ export default function Nav () {
     <nav className=' w-full py-5 md:flex md:flex-row md:items-center md:justify-between '>
         <div className='flex md:flex-row items-center justify-between'>
           <div className='flex'>
-              <img src='/public/logo.png' alt='logo' className='flex pl-5 md:px-5 w-32'/>
+              <img src='/logo.png' alt='logo' className='flex pl-5 md:px-5 w-32'/>
           </div>
 
           <div className='flex text-4xl md:hidden px-3' onClick={() => setOpen (!open)}>
@@ -23,7 +23,7 @@ export default function Nav () {
         
         <ul className=' text-sm md:text-lg lg:text-xl 2xl:text-xl pr-10 md:flex  hidden'>
           <li className='flex px-2'>
-            <Link to="/" className='flex items-center px-3 md:cursor-pointer  text-eacdc2 hover:opacity-50'>
+            <Link to="/" className='flex items-center px-3 md:cursor-pointer  text-eacdc2 hover:opacity-50 duration-300'>
               Home
             </Link>
             </li>
@@ -38,7 +38,7 @@ export default function Nav () {
 
         <ul className=''>
           <li>
-            <Link to="/" className=' py-7 px-3 inline-block text-eacdc2'>
+            <Link to="/" className=' py-7 px-3 inline-block text-eacdc2 duration-300'>
                 Home
             </Link>
           </li>

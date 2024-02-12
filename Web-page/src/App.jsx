@@ -4,7 +4,6 @@ import { BrowserRouter, Routes , Route } from "react-router-dom"
 import Home from "./pages/Home"
 import HomeP from "./pages/Photography"
 import HomeC from "./pages/Code"
-import HomeD from "./pages/Design"
 import StephannyP from "./pages/photoPages/stephanny"
 import AlessandraP from "./pages/photoPages/Alessandra"
 import AnaP from "./pages/photoPages/Ana"
@@ -20,6 +19,7 @@ import MaferP from "./pages/photoPages/Mafer"
 import SunshineP from "./pages/photoPages/Sunshine"
 import Mid2000sP from "./pages/photoPages/Mid2000s"
 import StreetP from "./pages/photoPages/Street"
+import AboutMe from "./pages/About"
 
 
 export default function App(){
@@ -31,7 +31,7 @@ export default function App(){
             <Route path="/" element={<Home />}></Route>
             <Route path="/HomeP" element={<HomeP />}></Route>
             <Route path="/HomeC" element={<HomeC />}></Route>
-            <Route path="/HomeD" element={<HomeD />}></Route>
+            <Route path="/AboutMe" element={<AboutMe />}></Route>
             <Route path="/StephannyP" element={<StephannyP />}></Route>
             <Route path="/AlessandraP" element={<AlessandraP />}></Route>
             <Route path="/AnaP" element={<AnaP />}></Route>
