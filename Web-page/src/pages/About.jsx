@@ -10,8 +10,8 @@ export default function AboutMe () {
          <body className="bg-1e1e1e">
 
             <Nav />
-        
-                <div className="flex flex-col md:flex-row px-2 py-10 md:px-10 md:items-center">
+                <div className="">
+                <div className="flex flex-col md:flex-row px-2 py-5 md:items-center shadow-2xl rounded-2xl md:box-content md:px-56">
                     <div className=" flex flex-col text-eacdc2 text-justify px-5">
                         <h1 className="text-eacdc2 text-sm lg:text-2xl 2xl:text-3xl font-bold hover:tracking-wide duration-700 text-justify py-2">
                             I'm Fraum
@@ -30,6 +30,7 @@ export default function AboutMe () {
                     <div className="flex p-5 ">
                         <img src="/Juan profile.jpg" className=""></img>
                     </div>
+                </div>
                 </div>
 
             <Footer />

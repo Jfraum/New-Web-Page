@@ -7,7 +7,7 @@ export default function Home() {
     return (
 
       
-      <div className=" bg-1e1e1e w-screen h-screen">
+      <div className=" bg-1e1e1e h-screen">
 
         <div className="pt-8 flex items-center justify-center">
       
@@ -34,5 +34,3 @@ export default function Home() {
       </div>
     )
   }
-
- 

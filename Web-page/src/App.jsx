@@ -20,11 +20,13 @@ import SunshineP from "./pages/photoPages/Sunshine"
 import Mid2000sP from "./pages/photoPages/Mid2000s"
 import StreetP from "./pages/photoPages/Street"
 import AboutMe from "./pages/About"
+import { ContactMe } from "./pages/ContactMe"
 
 
 export default function App(){
 
     return (
+    
         <BrowserRouter>
         <Routes>
 
@@ -32,6 +34,7 @@ export default function App(){
             <Route path="/HomeP" element={<HomeP />}></Route>
             <Route path="/HomeC" element={<HomeC />}></Route>
             <Route path="/AboutMe" element={<AboutMe />}></Route>
+            <Route path="/ContactMe" element={<ContactMe />}></Route>
             <Route path="/StephannyP" element={<StephannyP />}></Route>
             <Route path="/AlessandraP" element={<AlessandraP />}></Route>
             <Route path="/AnaP" element={<AnaP />}></Route>
@@ -51,5 +54,7 @@ export default function App(){
 
         </Routes>
         </BrowserRouter>
+
+
     )
 }

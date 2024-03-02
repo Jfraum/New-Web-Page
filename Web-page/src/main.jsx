@@ -5,7 +5,10 @@ import './index.css'
 import 'regenerator-runtime/runtime';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
+  <>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </>
 )
