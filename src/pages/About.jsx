@@ -27,7 +27,7 @@ export default function AboutMe () {
                         </p>
 
                     </div>
-                    <div className="flex p-5 ">
+                    <div className="flex ">
                         <img src="/Juan profile.jpg" className=""></img>
                     </div>
                 </div>
