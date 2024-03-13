@@ -7,7 +7,7 @@ export default function AboutMe () {
     
     return (
         <> 
-         <body className="bg-1e1e1e">
+         <body>
 
             <Nav />
                 <div className="">

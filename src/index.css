@@ -22,3 +22,9 @@
         }
     }
 }
+
+@layer base {
+  body {
+    @apply bg-[#1e1e1e];
+  }
+}

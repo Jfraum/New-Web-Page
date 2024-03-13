@@ -10,7 +10,7 @@ import Footer from "../../components/footer";
 export default function BarbaraP () {
     
     return (
-        <body className="bg-1e1e1e bg-auto">
+        <body >
 
                 <Nav />
 

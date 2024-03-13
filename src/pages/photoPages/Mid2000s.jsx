@@ -13,7 +13,7 @@ import Footer from "../../components/footer";
 export default function Mid2000sP () {
     
     return (
-        <body className="bg-1e1e1e bg-auto">
+        <body >
 
                 <Nav />
 

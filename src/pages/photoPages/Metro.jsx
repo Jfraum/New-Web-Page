@@ -12,7 +12,7 @@ import Footer from "../../components/footer";
 export default function MetroP () {
     
     return (
-        <body className="bg-1e1e1e bg-auto">
+        <body >
 
                 <Nav />
 
