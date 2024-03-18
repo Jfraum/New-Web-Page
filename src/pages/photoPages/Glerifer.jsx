@@ -10,7 +10,7 @@ import Footer from "../../components/footer";
 export default function GleriferP () {
     
     return (
-        <body >
+        < >
 
                 <Nav />
 
@@ -18,6 +18,6 @@ export default function GleriferP () {
 
             <Footer />
 
-        </body>
+        </>
     )
 }

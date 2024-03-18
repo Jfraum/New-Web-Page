@@ -7,7 +7,6 @@ export default function AboutMe () {
     
     return (
         <> 
-         <body>
 
             <Nav />
                 <div className="">
@@ -36,7 +35,7 @@ export default function AboutMe () {
             <Footer />
 
 
-         </body>
+        
         </>
     )
 }

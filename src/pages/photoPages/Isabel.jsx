@@ -12,7 +12,7 @@ import Footer from "../../components/footer";
 export default function IsabelP () {
     
     return (
-        <body >
+        < >
 
                 <Nav />
 
@@ -21,6 +21,6 @@ export default function IsabelP () {
             <Footer />
 
 
-        </body>
+        </>
     )
 }

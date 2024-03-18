@@ -26,7 +26,7 @@ import { ContactMe } from "./pages/ContactMe"
 export default function App(){
 
     return (
-    
+        <>    
         <BrowserRouter>
         <Routes>
 
@@ -54,6 +54,7 @@ export default function App(){
 
         </Routes>
         </BrowserRouter>
+        </>
 
 
     )

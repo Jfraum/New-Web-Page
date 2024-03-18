@@ -9,7 +9,7 @@ import Footer from "../../components/footer";
 export default function AlessandraP () {
     
     return (
-        <body >
+        <>
 
                 <Nav />
 
@@ -18,6 +18,6 @@ export default function AlessandraP () {
             <Footer />
 
 
-        </body>
+        </>
     )
 }

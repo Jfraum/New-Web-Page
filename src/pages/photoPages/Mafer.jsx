@@ -12,7 +12,7 @@ import Footer from "../../components/footer";
 export default function MaferP () {
     
     return (
-        <body >
+        <>
 
                 <Nav />
 
@@ -21,6 +21,6 @@ export default function MaferP () {
             <Footer />
 
 
-        </body>
+        </>
     )
 }

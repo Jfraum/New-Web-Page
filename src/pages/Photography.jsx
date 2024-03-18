@@ -8,7 +8,7 @@ import Footer from "../components/footer";
 export default function HomeP () {
     
     return (
-        <body >
+        < >
             
                 <Nav />
 
@@ -18,6 +18,6 @@ export default function HomeP () {
             <Footer />
           
 
-        </body>
+        </>
     )
 }

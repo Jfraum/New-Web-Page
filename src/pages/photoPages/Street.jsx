@@ -10,7 +10,7 @@ import Footer from "../../components/footer";
 export default function StreetP () {
     
     return (
-        <body >
+        <>
 
                 <Nav />
 
@@ -19,6 +19,6 @@ export default function StreetP () {
             <Footer />
 
 
-        </body>
+        </>
     )
 }

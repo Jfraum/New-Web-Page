@@ -1,13 +1,31 @@
-import React, { useRef } from 'react';
+import React, { useRef , useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Nav from '../components/navbar';
 import Footer from '../components/footer';
+import AlertMessage from '../components/Alert';
 
 export const ContactMe = () => {
-    const form = useRef();
+  const form = useRef();
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
   
     const sendEmail = (e) => {
       e.preventDefault();
+
+      const name = form.current.user_name.value;
+      const email = form.current.user_email.value;
+      const message = form.current.message.value;
+
+      if (!name || !email || !message) {
+        alert('Por favor, complete todos los campos');
+        return;
+      }
+    
   
       emailjs
         .sendForm
@@ -19,24 +37,37 @@ export const ContactMe = () => {
         })
         .then(
           () => {
-            console.log('SUCCESS!');
+            setShowAlert(true);
+            setAlertMessage('Enviado con éxito');
+            setIsSuccess(true);
+            form.current.reset();
           },
           (error) => {
-            console.log('FAILED...', error.text);
-          },
+            setShowAlert(true);
+            setAlertMessage('Error al enviar el mensaje');
+            setIsSuccess(false);
+          }
         );
     };
   
     return (
-        <body >
+        <>
             <Nav />
+
+            {showAlert && (
+              <AlertMessage
+                message={alertMessage}
+                isSuccess={isSuccess}
+                onClose={closeAlert}
+              />
+             )}
 
             
 
                 <div className='flex flex-col md:flex-row justify-center md:space-x-32 pt-10 items-center
                 space-y-10'>
 
-                  <img src='IMG_4139.jpg' className='flex w-1/5 shadow-2xl'></img>
+                  <img src='IMG_4139.jpg' className='flex w-1/6 shadow-2xl'></img>
                   
                     <form ref={form} onSubmit={sendEmail} className='flex flex-col space-y-6'>
                         <label className='text-eacdc2'>Name</label>
@@ -52,6 +83,6 @@ export const ContactMe = () => {
            
             
         <Footer />
-      </body>
+      </>
     );
   }
