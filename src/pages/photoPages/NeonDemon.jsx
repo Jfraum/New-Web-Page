@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../components/navbar";
-import NeonDemonG from "../../../public/NeonDemonG";
+import NeonDemonG from "../../components/gallerys/NeonDemonG";
 import Footer from "../../components/footer";
 
 

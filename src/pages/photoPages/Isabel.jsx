@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../components/navbar";
-import IsabelG from "../../../public/IsabelG";
+import IsabelG from "../../components/gallerys/IsabelG";
 
 import Footer from "../../components/footer";
 

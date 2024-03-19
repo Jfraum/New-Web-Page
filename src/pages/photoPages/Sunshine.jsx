@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../components/navbar";
-import SunshineG from "../../../public/SunshineG";
+import SunshineG from "../../components/gallerys/SunshineG";
 import Footer from "../../components/footer";
 
 

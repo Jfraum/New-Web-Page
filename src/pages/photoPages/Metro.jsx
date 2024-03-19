@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../components/navbar";
-import MetroG from "../../../public/Metro";
+import MetroG from "../../components/gallerys/Metro";
 import Footer from "../../components/footer";
 
 
