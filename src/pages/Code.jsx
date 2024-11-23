@@ -3,21 +3,39 @@ import 'animate.css';
 
 import Nav from "../components/navbar";
 import Footer from "../components/footer";
+import { IKImage } from "imagekitio-react";
+
+const urlEndpoint = 'https://ik.imagekit.io/f10c3to17';
 
 export default function HomeC () {
-    
+
+   
     return (
         <> 
 
 
             <Nav />
-            <div className="flex items-center justify-center py-56">
-                <h1 className="animate__animated animate__swing hover:opacity-50 duration-100 text-eacdc2 text-sm lg:text-2xl 2xl:text-3xl font-bold"> 
-
-                    Coming soon ...
-            
+            <header className="flex justify-center text-xl font-bold text-eacdc2">
+                <h1>
+                    Aquí podrás revisar todos mis proyectos.
                 </h1>
-            </div>
+            </header>
+            <section className="flex flex-grow justify-center mt-10">
+                <div className=" w-[320px] h-[310px] shadow-2xl hover:shadow-eacdc2 duration-300 bg-1e1e1e rounded-2xl flex flex-col pt-1 items-center">
+                
+                <IKImage urlEndpoint={urlEndpoint}
+                path="/Logo/Screenshot%20from%202024-11-23%2016-07-31.png?updatedAt=1732392549501"
+                className=" flex justify-center w-[300px] h-[200] rounded-2xl mt-5 shadow-2xl"/>
+
+
+                <h1 className="text-eacdc2 font-bold text-center mt-10">
+                    Picma es un buscador de imagenes, potenciado con la API de Unsplash, en el que podrás buscar cualquier imagen que te guste. 
+                </h1>
+
+                
+
+                </div>
+                </section>
             <Footer />
 
         </>
