@@ -7,7 +7,7 @@ export default function Home() {
     return (
 
       
-      <div >
+      <>
         {/* Logo Principal */}
         <header className="pt-8 flex items-center justify-center">
       
@@ -28,8 +28,9 @@ export default function Home() {
           </a>
 
           <Footer />
+          
         </div>
        
-      </div>
+      </>
     )
   }
