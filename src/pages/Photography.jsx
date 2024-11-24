@@ -1,7 +1,7 @@
 import React from "react";
-import IndexImages from "../components/Imagenes";
-import Nav from "../components/navbar";
-import Footer from "../components/footer";
+import IndexImages from "../components/Imagenes.jsx"
+import Nav from "../components/navbar.jsx";
+import Footer from "../components/footer.jsx";
 
 
 
