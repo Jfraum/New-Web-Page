@@ -1,7 +1,7 @@
 import React from "react";
-import StephannyG from "../../components/gallerys/StephannyG";
-import Nav from "../../components/navbar";
-import Footer from "../../components/footer";
+import StephannyG from "../components/gallerys/StephannyG";
+import Nav from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
 
 

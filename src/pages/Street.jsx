@@ -1,7 +1,8 @@
 import React from "react";
-import Nav from "../../components/navbar";
-import StreetG from "../../components/gallerys/StreetG";
-import Footer from "../../components/footer";
+import Nav from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import StreetG from "../components/gallerys/StreetG";
+
 
 
 

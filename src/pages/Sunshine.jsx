@@ -1,7 +1,8 @@
 import React from "react";
-import Nav from "../../components/navbar";
-import SunshineG from "../../components/gallerys/SunshineG";
-import Footer from "../../components/footer";
+import Nav from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import SunshineG from "../components/gallerys/SunshineG";
+
 
 
 

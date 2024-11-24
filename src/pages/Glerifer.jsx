@@ -1,7 +1,8 @@
 import React from "react";
-import Nav from "../../components/navbar";
-import GleriferG from "../../components/gallerys/GleriferG";
-import Footer from "../../components/footer";
+import Nav from "../components/Navbar";
+import Footer from "../components/Footer";
+import GleriferG from "../components/gallerys/GleriferG";
+
 
 
 

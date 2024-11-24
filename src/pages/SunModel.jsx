@@ -1,7 +1,8 @@
 import React from "react";
-import Nav from "../../components/navbar";
-import SunmodelG from "../../components/gallerys/SunmodelG";
-import Footer from "../../components/footer";
+import Nav from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import SunmodelG from "../components/gallerys/SunmodelG";
+
 
 
 

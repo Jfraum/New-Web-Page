@@ -1,8 +1,8 @@
 import React from "react";
 import 'animate.css';
 
-import Nav from "../components/navbar";
-import Footer from "../components/footer";
+import Nav from "../components/Navbar";
+import Footer from "../components/Footer";
 import { IKImage } from "imagekitio-react";
 
 const urlEndpoint = 'https://ik.imagekit.io/f10c3to17';

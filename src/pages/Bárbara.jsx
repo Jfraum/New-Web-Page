@@ -1,8 +1,9 @@
 import React from "react";
-import Nav from "../../components/navbar";
+import Nav from "../components/Navbar";
+import Footer from "../components/Footer";
 
-import BarbaraG from "../../components/gallerys/BárbaraG"
-import Footer from "../../components/footer";
+import BarbaraG from "../components/gallerys/BárbaraG"
+
 
 
 

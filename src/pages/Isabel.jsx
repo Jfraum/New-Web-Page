@@ -1,8 +1,8 @@
 import React from "react";
-import Nav from "../../components/navbar";
-import IsabelG from "../../components/gallerys/IsabelG";
+import Nav from "../components/Navbar";
+import Footer from "../components/Footer";
+import IsabelG from "../components/gallerys/IsabelG";
 
-import Footer from "../../components/footer";
 
 
 

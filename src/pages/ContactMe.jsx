@@ -1,7 +1,7 @@
 import React, { useRef , useState } from 'react';
 import emailjs from '@emailjs/browser';
-import Nav from '../components/navbar';
-import Footer from '../components/footer';
+import Nav from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
 import AlertMessage from '../components/Alert';
 
 export const ContactMe = () => {

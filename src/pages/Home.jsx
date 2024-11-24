@@ -1,5 +1,6 @@
 import React from "react";
-import Footer from "../components/footer.jsx";
+
+import Footer from "../components/Footer";
 
 
 export default function Home() {

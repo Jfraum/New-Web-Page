@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../../components/navbar";
-import Footer from "../../components/footer";
-import AlessandraG from "../../components/gallerys/AlessandraG"
+import Nav from "../components/Navbar";
+import Footer from "../components/Footer";
+import AlessandraG from "../components/gallerys/AlessandraG"
 
 
 
