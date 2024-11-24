@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../components/navbar";
-import AnaG from "../../components/gallerys/AnaG"
+import AnaG from "../../components/gallerys/AnaG";
 import Footer from "../../components/footer";
 
 
