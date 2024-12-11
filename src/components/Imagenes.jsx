@@ -2,7 +2,9 @@ import React from "react";
 import { IKImage} from "imagekitio-react";
 import { Link } from "react-router-dom";
 
-const urlEndpoint = 'https://ik.imagekit.io/f10c3to17';
+const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
+
+
 
 export default function IndexImages () {
 

@@ -4,24 +4,25 @@ import { BrowserRouter, Routes , Route } from "react-router-dom"
 import Home from "./pages/Home"
 import HomeP from "./pages/Photography"
 import HomeC from "./pages/Code"
-import StephannyP from "./pages/stephanny"
-import AlessandraP from "./pages/Alessandra"
-import AnaP from "./pages/Ana"
-import MariaFP from "./pages/MariaF"
-import BarbaraP from "./pages/Bárbara"
-import Glerifer2P from "./pages/Glerifer2"
-import NeonDemonP from "./pages/NeonDemon"
-import SunmodelP from "./pages/SunModel"
-import GleriferP from "./pages/Glerifer"
-import IsabelP from "./pages/Isabel"
-import MetroP from "./pages/Metro"
-import MaferP from "./pages/Mafer"
-import SunshineP from "./pages/Sunshine"
-import Mid2000sP from "./pages/Mid2000s"
-import StreetP from "./pages/Street"
+import StephannyP from "./pages/subpages/stephanny.jsx"
+import AlessandraP from "./pages/subpages/Alessandra"
+import AnaP from "./pages/subpages/Ana"
+import MariaFP from "./pages/subpages/MariaF"
+import BarbaraP from "./pages/subpages/Bárbara"
+import Glerifer2P from "./pages/subpages/Glerifer2"
+import NeonDemonP from "./pages/subpages/NeonDemon"
+import SunmodelP from "./pages/subpages/SunModel"
+import GleriferP from "./pages/subpages/Glerifer"
+import IsabelP from "./pages/subpages/Isabel"
+import MetroP from "./pages/subpages/Metro"
+import MaferP from "./pages/subpages/Mafer"
+import SunshineP from "./pages/subpages/Sunshine"
+import Mid2000sP from "./pages/subpages/Mid2000s"
+import StreetP from "./pages/subpages/Street"
 import AboutMe from "./pages/About"
 import { ContactMe } from "./pages/ContactMe"
-
+import { Cinematography } from "./pages/Cinematography"
+import { Metanoia } from "./pages/subpages/Metanoia"
 
 export default function App(){
 
@@ -50,6 +51,8 @@ export default function App(){
             <Route path="/Mid2000s" element={<Mid2000sP />}></Route>
             <Route path="/StreetP" element={<StreetP />}></Route>
             <Route path="/SunmodelP" element={<SunmodelP />}></Route>
+            <Route path="/Cinematography" element={<Cinematography />}></Route>
+            <Route path="/Metanoia" element={<Metanoia />}></Route>
 
 
         </Routes>

@@ -21,6 +21,23 @@
           }
         }
     }
+
+    @variants videos {
+      .videos {
+        column-count: 2;
+        column-gap: 30px;
+        
+      }
+      .items {
+        display: inline-block;
+        width: 100%;
+      }
+      @media only screen and (max-width: 1023px) and (min-width: 768px) {
+        .masonry {
+          column-count: 2;
+        }
+      }
+    }
 }
 
 @layer base {

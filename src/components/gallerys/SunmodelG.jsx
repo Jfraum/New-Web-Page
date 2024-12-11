@@ -3,7 +3,7 @@ import { IKImage , IKContext } from "imagekitio-react";
 
 
 
-const urlEndpoint = 'https://ik.imagekit.io/f10c3to17';
+const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
 
 export default function SunmodelG () {
 

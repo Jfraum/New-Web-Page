@@ -9,8 +9,8 @@ export const links = [
                 {name:'Home' , src:"/HomeP"},
                 {name:'Stephanny/Actress' , src:"/StephannyP"}, 
                 {name:'Alessandra' , src:"/AlessandraP"},
-                {name:'Ana' , src:"/AnaP"},
-                {name:'Maria Fernanda' , src:"/MariaFP"},
+                {name:'Ana', src:"/AnaP"},
+                {name:'Maria Fernanda', src:"/MariaFP"},
                 {name:'Bárbara' , src:"/BarbaraP"},
                 {name:'Sun Model' , src:"/SunmodelP"},
                 {name:'Glerifer' , src:"/GleriferP"},
@@ -26,11 +26,16 @@ export const links = [
             ]
         }
     ]}, 
+        {name: "Cinematography",
+          src: "/Cinematography"},
+
         {name: "Code" , 
           src: "/HomeC" }, 
-          
+
         {name: "About me", 
           src: "/AboutMe"} , 
           
-          {name: "Contact" , 
-          src:"/ContactMe"}];
+        {name: "Contact" , 
+            src:"/ContactMe"} ,
+
+         ];
