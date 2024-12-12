@@ -16,6 +16,13 @@ export default {
       },
     },
   },
+
+  variants: {
+    extend: {
+      display: ['horizontalsImages'],
+    },
+  },
+  
   plugins: [
     flowbitePlugin, // Usa la importación en lugar de require
   ],

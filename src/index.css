@@ -38,6 +38,13 @@
         }
       }
     }
+    @variants horizontalsImages {
+      .horizontals {
+        display: flex;
+        column-count: 4; /* Número de columnas dentro de cada sección */
+        column-gap: 10px;
+      }
+    }
 }
 
 @layer base {
