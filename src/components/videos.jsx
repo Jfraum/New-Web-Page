@@ -5,7 +5,7 @@ export function Videos () {
     const videos = [
         {
             
-            path: "/videos/Metanoia Gif.gif",
+            path: "/videos/Metanoia Gif.gif ",
             text: "Metanoia",
             href: "/Metanoia"
         },
