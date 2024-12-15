@@ -23,6 +23,7 @@ import AboutMe from "./pages/About"
 import { ContactMe } from "./pages/ContactMe"
 import { Cinematography } from "./pages/Cinematography"
 import { Metanoia } from "./pages/subpages/Metanoia"
+import { Reel } from "./pages/subpages/Reel.jsx"
 
 export default function App(){
 
@@ -53,7 +54,7 @@ export default function App(){
             <Route path="/SunmodelP" element={<SunmodelP />}></Route>
             <Route path="/Cinematography" element={<Cinematography />}></Route>
             <Route path="/Metanoia" element={<Metanoia />}></Route>
-
+            <Route path="/Reel" element={<Reel />}></Route>
 
         </Routes>
         </BrowserRouter>

@@ -1,38 +1,51 @@
 import React from "react";
 import Nav from "/src/components/Navbar.jsx"
 import Footer from "/src/components/Footer.jsx"
+import { IKImage } from "imagekitio-react";
+
+const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
 
 export function Metanoia () {
     const images = [
         {
-            path: "/public/frames/METANOIA 1.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%201.jpg?updatedAt=1734220188722",
         },
         {
-            path: "/public/frames/METANOIA 4.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%204.jpg?updatedAt=1734220188628",
         },
         {
-            path: "/public/frames/METANOIA 5.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%2010.jpg?updatedAt=1734220188231",
         },
         {
-            path: "/public/frames/METANOIA 10.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%2015.jpg?updatedAt=1734220187921",
         },
         {
-            path: "/public/frames/METANOIA 15.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%205.jpg?updatedAt=1734220187804",
         },
         {
-            path: "/public/frames/METANOIA 16.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%2016.jpg?updatedAt=1734220187215",
         },
         {
-            path: "/public/frames/METANOIA 17.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%2019.jpg?updatedAt=1734220186728",
         },
         {
-            path: "/public/frames/METANOIA 18.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%2017.jpg?updatedAt=1734220186633",
         },
         {
-            path: "/public/frames/METANOIA 19.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%2020.jpg?updatedAt=1734220186502",
         },
         {
-            path: "/public/frames/METANOIA 20.jpg",
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/METANOIA%2018.jpg?updatedAt=1734220186469",
         },
        
     ]
@@ -54,7 +67,7 @@ export function Metanoia () {
         <div className="grid grid-cols-2 gap-4 mt-4 ms-4">
             {images.map((image, index) => (
                 <div key={index}>
-                    <img className="w-full rounded-xl" src={image.path}  />
+                    <IKImage className="w-full rounded-xl" urlEndpoint={urlEndpoint} path={image.path}  />
                 </div>
             ))}
         </div>
