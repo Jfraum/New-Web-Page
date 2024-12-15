@@ -22,7 +22,7 @@ export function Videos () {
         <>
 
 
-            <div className="z-0 m-10 videos">
+            <div className="z-0 md:m-10  md:videos">
                 {videos.map((video, index) => (
                     <div key={index} className="z-0 relative grid pt-2">
                         

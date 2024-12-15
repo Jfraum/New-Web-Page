@@ -43,7 +43,7 @@ export function Reel () {
             className="w-full h-64 sm:h-96"> </iframe>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-4 ms-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mx-6">
             {images.map((image, index) => (
                 <div key={index}>
                     <IKImage className="w-full rounded-xl" urlEndpoint={urlEndpoint} path={image.path}  />
