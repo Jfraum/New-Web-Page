@@ -24,6 +24,7 @@ import { ContactMe } from "./pages/ContactMe"
 import { Cinematography } from "./pages/Cinematography"
 import { Metanoia } from "./pages/subpages/Metanoia"
 import { Reel } from "./pages/subpages/Reel.jsx"
+import { Things } from "./pages/subpages/Things.jsx"
 
 export default function App(){
 
@@ -55,6 +56,7 @@ export default function App(){
             <Route path="/Cinematography" element={<Cinematography />}></Route>
             <Route path="/Metanoia" element={<Metanoia />}></Route>
             <Route path="/Reel" element={<Reel />}></Route>
+            <Route path="/Things" element={<Things />}></Route>
 
         </Routes>
         </BrowserRouter>

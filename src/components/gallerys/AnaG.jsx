@@ -13,6 +13,10 @@ export default function AnaG () {
     const images = [
         {
             urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20monrro/_MG_0243.jpg?updatedAt=1734916251284"
+        },
+        {
+            urlEndpoint: urlEndpoint,
             path: "/home%20photos/Ana%20monrro/0.jpg?updatedAt=1712443985799",
 
         },

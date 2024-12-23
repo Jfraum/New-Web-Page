@@ -15,6 +15,17 @@ export function Videos () {
             path: "/videos/Cinematography reel.gif",
             text: "Cinematography reel",
             href: "/Reel"
+        },
+        {
+            path: "/videos/Gif - you.gif",
+            text: "You",
+            href: "/You"
+        },
+
+        {
+            path: "/videos/Gif - Little Things.gif",
+            text: "Little Things",
+            href: "/Things"
         }
     ]
 

@@ -2,19 +2,51 @@ import React from "react";
 import { IKImage} from "imagekitio-react";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+
 const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
 
 
 
 export default function IndexImages () {
 
+ 
     const images = [
+
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Maria%20Fernanda%20-%20Actriz/14.jpg?updatedAt=1710358589665",
             text: "Maria Fernanda/Actress",
             href: "/MariaFP"
         },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Marcos/IMG_9747.jpg?updatedAt=1734915991723",
+            text: "Marcos",
+            href: ""  
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Home%20images/4.jpg?updatedAt=1704074419778",
+            text: "Alessandra",
+            href:"/AlessandraP"
+        },      
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7283.jpg?updatedAt=1734916063059",
+            text: "Maria Jose",
+            href: ""  
+        },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Rians/IMG_6812.jpg?updatedAt=1734915915970",
+            text: "Palacio del Blumer",
+            href: ""  
+        },
+        
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Home%20images/2.jpg?updatedAt=1704074062152",
@@ -23,11 +55,11 @@ export default function IndexImages () {
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Home%20images/4.jpg?updatedAt=1704074419778",
-            text: "Alessandra",
-            href:"/AlessandraP"
+            path: "/home%20photos/Ana%20monrro/0.jpg?updatedAt=1712443985799",
+            text: "Ana",
+            href: "/AnaP"
         },
-
+        
 
         {
             urlEndpoint: urlEndpoint,
@@ -43,12 +75,7 @@ export default function IndexImages () {
             href: "/Glerifer2P"
         },
 
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Ana%20monrro/0.jpg?updatedAt=1712443985799",
-            text: "Ana",
-            href: "/AnaP"
-        },
+        
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Home%20images/21.jpg?updatedAt=1704078143553",
@@ -63,12 +90,35 @@ export default function IndexImages () {
             href: "/GleriferP"
         },
 
+        
+
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Home%20images/_MG_9962.jpg?updatedAt=1706281203881",
             text: "Streets",
             href: "/StreetP"
         },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Virino/_MG_1940.jpg?updatedAt=1734916218724",
+            text: "Virino campaign",
+            href: ""  
+        },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Firehat/IMG_3814-2.jpg?updatedAt=1734915710145",
+            text: "Firehat Campaign",
+            href: ""
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20Rooftop/_MG_1237-3.JPG?updatedAt=1734915622391",
+            text: "Rooftop",
+            href: ""
+        },
+
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Home%20images/_MG_0936.jpg?updatedAt=1706983369770",
@@ -112,21 +162,35 @@ export default function IndexImages () {
         },
     ]
 
+
+
     return (
-
-  
-        <div className=" z-0 mt-10  md:px-2 md:mx-auto md:max-w-7xl md:masonry">
+        <div className="z-0 mt-10 md:px-2 md:mx-auto  md:masonry">
             {images.map((image, index) => (
-              <div className=" z-0 relative grid pt-2"  key={index}>
-                <div className="">
-                  <Link className="absolute inset-0 z-0 flex items-center justify-center text-ffe8d6 text-2xl font-bold bg-1e1e1e opacity-0 hover:opacity-50 transition duration-300 cursor-pointer" to={image.href} >{image.text}</Link>
-                  <IKImage urlEndpoint={image.urlEndpoint} path={image.path} loading="lazy"
-                      lqip={{ active: true, quality: 20 }}/>
-                </div>
-              </div>
+                <motion.div
+                    key={index}
+                    className="z-0 relative grid pt-2"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <div>
+                        <Link
+                            className="absolute inset-0 z-0 flex items-center justify-center text-ffe8d6 text-2xl font-bold bg-1e1e1e opacity-0 hover:opacity-50 transition duration-300 cursor-pointer"
+                            to={image.href}
+                        >
+                            {image.text}
+                        </Link>
+                        <IKImage
+                            urlEndpoint={image.urlEndpoint}
+                            path={image.path}
+                            loading="lazy"
+                            lqip={{ active: true, quality: 20 }}
+                        />
+                    </div>
+                </motion.div>
             ))}
-          </div>
-
-    )
+        </div>
+    );
     
 }
