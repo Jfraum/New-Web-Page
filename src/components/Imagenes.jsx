@@ -110,13 +110,13 @@ export default function IndexImages () {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Firehat/IMG_3814-2.jpg?updatedAt=1734915710145",
             text: "Firehat Campaign",
-            href: ""
+            href: "/Firehat"
         },
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Ana%20Rooftop/_MG_1237-3.JPG?updatedAt=1734915622391",
-            text: "Rooftop",
-            href: ""
+            text: "Little Things",
+            href: "/Things"
         },
 
         {

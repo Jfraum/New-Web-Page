@@ -37,7 +37,6 @@ export function Reel () {
         <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl">
             <iframe src="https://www.youtube.com/embed/60rsebZLSEk?si=y3iUGrKm1LJJhh4B" 
             title="YouTube video player" 
-            allowfullscreen  
             allow="autoplay; encrypted-media"
             allowFullScreen
             className="w-full h-64 sm:h-96"> </iframe>

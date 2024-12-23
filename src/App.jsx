@@ -25,6 +25,7 @@ import { Cinematography } from "./pages/Cinematography"
 import { Metanoia } from "./pages/subpages/Metanoia"
 import { Reel } from "./pages/subpages/Reel.jsx"
 import { Things } from "./pages/subpages/Things.jsx"
+import Firehat from "./pages/subpages/Firehat.jsx"
 
 export default function App(){
 
@@ -57,6 +58,7 @@ export default function App(){
             <Route path="/Metanoia" element={<Metanoia />}></Route>
             <Route path="/Reel" element={<Reel />}></Route>
             <Route path="/Things" element={<Things />}></Route>
+            <Route path="/Firehat" element={<Firehat />}></Route>
 
         </Routes>
         </BrowserRouter>

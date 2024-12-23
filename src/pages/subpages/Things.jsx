@@ -27,6 +27,31 @@ export function Things () {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Ana%20Rooftop/_MG_1247-8.JPG?updatedAt=1734915621174",
         },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20Rooftop/_MG_1441-76.JPG?updatedAt=1734915622557",
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20Rooftop/_MG_1404-66.JPG?updatedAt=1734915622354",
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20Rooftop/_MG_1268-17.JPG?updatedAt=1734915621610",
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20Rooftop/_MG_1367-58.JPG?updatedAt=1734915621951",
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20Rooftop/_MG_1355-54.JPG?updatedAt=1734915620027",
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Ana%20Rooftop/_MG_1310-35.JPG?updatedAt=1734915620502",
+        },
+       
        
     ]
 
@@ -37,15 +62,14 @@ export function Things () {
         <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl">
             <iframe src="https://www.youtube.com/embed/OsGkYNW8dHc?autoplay=1&loop=1&controls=0&showinfo=0&modestbranding=1" 
             title="YouTube video player" 
-            allowfullscreen  
             allow="autoplay; encrypted-media"
             allowFullScreen
             className="w-full h-64 sm:h-96"> </iframe>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mx-6">
+        <div className="md:videos ">
             {images.map((image, index) => (
-                <div key={index}>
+                <div className=" md:mx-5 pt-5 md:my-5" key={index}>
                     <IKImage className="w-full rounded-xl" urlEndpoint={urlEndpoint} path={image.path}  />
                 </div>
             ))}

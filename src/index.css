@@ -5,6 +5,12 @@
 @layer utilities {
     @variants responsive {
 
+      .videos {
+        column-count: 2;
+        column-gap: 3px;
+        
+      }
+
         .masonry {
           column-count: 3;
           column-gap: 0.5em;
@@ -20,24 +26,13 @@
             column-count: 2;
           }
         }
+        @media only screen and (max-width: 1023px) and (min-width: 768px) {
+          .videos {
+            column-count: 2;
+          }
+        }
     }
 
-    @variants videos {
-      .videos {
-        column-count: 2;
-        column-gap: 30px;
-        
-      }
-      .items {
-        display: inline-block;
-        width: 100%;
-      }
-      @media only screen and (max-width: 1023px) and (min-width: 768px) {
-        .masonry {
-          column-count: 2;
-        }
-      }
-    }
     @variants horizontalsImages {
       .horizontals {
         display: flex;
