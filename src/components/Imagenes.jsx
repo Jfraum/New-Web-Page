@@ -24,7 +24,7 @@ export default function IndexImages () {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Marcos/IMG_9747.jpg?updatedAt=1734915991723",
             text: "Marcos",
-            href: ""  
+            href: "/Marcos"  
         },
         {
             urlEndpoint: urlEndpoint,
@@ -37,16 +37,24 @@ export default function IndexImages () {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7283.jpg?updatedAt=1734916063059",
             text: "Maria Jose",
-            href: ""  
+            href: "/Majo"  
         },
 
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Rians/IMG_6812.jpg?updatedAt=1734915915970",
             text: "Palacio del Blumer",
-            href: ""  
+            href: "/Palacio"  
         },
         
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/_MG_6721%202.jpg?updatedAt=1710156052185",
+            text: "Glerifer 2",
+            href: "/Glerifer2P"
+        },
+
+
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Home%20images/2.jpg?updatedAt=1704074062152",
@@ -55,11 +63,22 @@ export default function IndexImages () {
         },
         {
             urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Virino/_MG_1940.jpg?updatedAt=1734916218724",
+            text: "Virino campaign",
+            href: "/Virino"  
+        },
+        {
+            urlEndpoint: urlEndpoint,
             path: "/home%20photos/Ana%20monrro/0.jpg?updatedAt=1712443985799",
             text: "Ana",
             href: "/AnaP"
         },
-        
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Jhuli/_MG_8212.jpg?updatedAt=1734915318032",
+            text: "Jhulianna",
+            href: "/Jhuli"
+        },
 
         {
             urlEndpoint: urlEndpoint,
@@ -68,13 +87,7 @@ export default function IndexImages () {
             href: "/BarbaraP"
         },
        
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Glerifer%202/_MG_6721%202.jpg?updatedAt=1710156052185",
-            text: "Glerifer 2",
-            href: "/Glerifer2P"
-        },
-
+     
         
         {
             urlEndpoint: urlEndpoint,
@@ -99,12 +112,7 @@ export default function IndexImages () {
             href: "/StreetP"
         },
 
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Virino/_MG_1940.jpg?updatedAt=1734916218724",
-            text: "Virino campaign",
-            href: ""  
-        },
+     
 
         {
             urlEndpoint: urlEndpoint,
@@ -186,6 +194,7 @@ export default function IndexImages () {
                             path={image.path}
                             loading="lazy"
                             lqip={{ active: true, quality: 20 }}
+                            className=""
                         />
                     </div>
                 </motion.div>

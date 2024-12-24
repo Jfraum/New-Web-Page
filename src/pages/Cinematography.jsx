@@ -5,7 +5,7 @@ import { Videos } from "../components/videos";
 
 
 
-export function Cinematography() {
+export default function Cinematography() {
 
    
 

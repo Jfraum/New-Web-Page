@@ -5,7 +5,7 @@ import { IKImage } from "imagekitio-react";
 
 const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
 
-export function Things () {
+export default function Things () {
     const images = [
         {
             urlEndpoint: urlEndpoint,

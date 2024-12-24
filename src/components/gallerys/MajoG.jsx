@@ -7,79 +7,59 @@ const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
 
 
 
-export default function FirehatG () {
-
-
-
-
-    
+export default function MajoG () { 
     const images = [
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3973.jpg?updatedAt=1734915711925",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7260.jpg?updatedAt=1734916064448",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3984-2.jpg?updatedAt=1734915711512",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7236.jpg?updatedAt=1734916063679",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3895.jpg?updatedAt=1734915711278",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7267.jpg?updatedAt=1734916064749",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3669.jpg?updatedAt=1734915710130",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7146.jpg?updatedAt=1734916065895",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_4004.jpg?updatedAt=1734915712290",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7204.jpg?updatedAt=1734916063776",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3705.jpg?updatedAt=1734915710184",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7283.jpg?updatedAt=1734916063059",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3770.jpg?updatedAt=1734915710227",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7213.jpg?updatedAt=1734916062169",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3789.jpg?updatedAt=1734915709952",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7249.jpg?updatedAt=1734916064487",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3747.jpg?updatedAt=1734915708546",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7241.jpg?updatedAt=1734916062908",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3675.jpg?updatedAt=1734915707662",
+            path: "/home%20photos/Maria%20Jos%C3%A9/IMG_7167.jpg?updatedAt=1734916060710",
 
         },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3660.jpg?updatedAt=1734915707810",
 
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3679.jpg?updatedAt=1734915708778",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3814-2.jpg?updatedAt=1734915710145",
-
-        },
-    
 
     ]
 

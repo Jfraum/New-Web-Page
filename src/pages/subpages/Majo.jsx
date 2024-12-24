@@ -1,19 +1,19 @@
 import React from "react";
 import Nav from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import FirehatG from "../../components/gallerys/FirehatG";
+import MajoG from "../../components/gallerys/MajoG";
 
 
 
 
-export default function Firehat () {
+export default function Majo () {
     
     return (
         <>
 
                 <Nav />
 
-            <FirehatG />
+            <MajoG />
 
             <Footer />
 

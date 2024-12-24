@@ -1,19 +1,20 @@
 import React from "react";
 import Nav from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import FirehatG from "../../components/gallerys/FirehatG";
+
+import PalacioGB from "../../components/gallerys/PalacioBG";
 
 
 
 
-export default function Firehat () {
+export default function Palacio () {
     
     return (
         <>
 
                 <Nav />
 
-            <FirehatG />
+            <PalacioGB />
 
             <Footer />
 

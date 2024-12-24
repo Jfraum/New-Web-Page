@@ -1,19 +1,19 @@
 import React from "react";
 import Nav from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import FirehatG from "../../components/gallerys/FirehatG";
+import JhuliG from "../../components/gallerys/JhuliG";
 
 
 
 
-export default function Firehat () {
+export default function Jhuli () {
     
     return (
         <>
 
                 <Nav />
 
-            <FirehatG />
+            <JhuliG />
 
             <Footer />
 

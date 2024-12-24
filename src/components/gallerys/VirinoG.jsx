@@ -7,79 +7,50 @@ const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
 
 
 
-export default function FirehatG () {
-
-
-
-
-    
+export default function VirinoG () { 
     const images = [
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3973.jpg?updatedAt=1734915711925",
+            path: "/home%20photos/Virino/_MG_2018.jpg?updatedAt=1734916220120",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3984-2.jpg?updatedAt=1734915711512",
+            path: "/home%20photos/Virino/_MG_2089.jpg?updatedAt=1734916219667",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3895.jpg?updatedAt=1734915711278",
+            path: "/home%20photos/Virino/_MG_1991.jpg?updatedAt=1734916217832",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3669.jpg?updatedAt=1734915710130",
+            path: "/home%20photos/Virino/_MG_1946.jpg?updatedAt=1734916219292",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_4004.jpg?updatedAt=1734915712290",
+            path: "/home%20photos/Virino/_MG_1964.jpg?updatedAt=1734916218956",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3705.jpg?updatedAt=1734915710184",
+            path: "/home%20photos/Virino/_MG_1940.jpg?updatedAt=1734916218724",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3770.jpg?updatedAt=1734915710227",
+            path: "/home%20photos/Virino/_MG_2055.jpg?updatedAt=1734916218369",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3789.jpg?updatedAt=1734915709952",
+            path: "/home%20photos/Virino/_MG_2083.jpg?updatedAt=1734916218157",
 
         },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3747.jpg?updatedAt=1734915708546",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3675.jpg?updatedAt=1734915707662",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3660.jpg?updatedAt=1734915707810",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3679.jpg?updatedAt=1734915708778",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Firehat/IMG_3814-2.jpg?updatedAt=1734915710145",
-
-        },
-    
+       
+        
 
     ]
 
