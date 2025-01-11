@@ -26,7 +26,6 @@ export const links = [
                 {name:'Firehat' , src:"/Firehat"},
                 {name:'Marcos' , src:"/Marcos"},
                 {name:'Little Things' , src:"/Things"},
-                {name:'Jhulianna' , src:"/Jhulianna"},
                 {name:'Jhulianna' , src:"/Jhuli"},
                 {name:'Maria jose' , src:"/Majo"},
                 {name:'Palacio del Blumer' , src:"/Palacio"},
