@@ -34,7 +34,7 @@ export default function Reel () {
         <>
 
         <Nav />
-        <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl">
+        <div className="pt-10 relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl">
             <iframe src="https://www.youtube.com/embed/60rsebZLSEk?si=y3iUGrKm1LJJhh4B" 
             title="YouTube video player" 
             allow="autoplay; encrypted-media"

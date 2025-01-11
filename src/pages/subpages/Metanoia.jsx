@@ -54,7 +54,7 @@ export default function Metanoia () {
         <>
 
         <Nav />
-        <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl">
+        <div className="pt-10 relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl">
             <iframe
                 src="https://www.youtube.com/embed/UHYV2J1aJ7c?autoplay=1&loop=1&playlist=UHYV2J1aJ7c&controls=0&showinfo=0&modestbranding=1"
                 title="YouTube Video"

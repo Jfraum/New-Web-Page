@@ -22,7 +22,14 @@ export const links = [
                 {name:'Mafer' , src:"/MaferP"},
                 {name:'Sunshine' , src:"/SunshineP"},
                 {name:'MID 200s' , src:"/Mid2000s"},
-                
+                {name:'Virino' , src:"/Virino"},
+                {name:'Firehat' , src:"/Firehat"},
+                {name:'Marcos' , src:"/Marcos"},
+                {name:'Little Things' , src:"/Things"},
+                {name:'Jhulianna' , src:"/Jhulianna"},
+                {name:'Jhulianna' , src:"/Jhuli"},
+                {name:'Maria jose' , src:"/Majo"},
+                {name:'Palacio del Blumer' , src:"/Palacio"},
             ]
         }
     ]}, 
