@@ -166,7 +166,7 @@ export default function IndexImages () {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Mid%202000s/2041-12%20copy.jpg?updatedAt=1710367250516",
             text: "Mid 2000s",
-            href: "/Mid2000s"
+            href: "/Mid2000sP"
         },
     ]
 

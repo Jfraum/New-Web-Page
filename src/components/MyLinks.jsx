@@ -21,7 +21,7 @@ export const links = [
                 {name:'Metro' , src:"/MetroP"},
                 {name:'Mafer' , src:"/MaferP"},
                 {name:'Sunshine' , src:"/SunshineP"},
-                {name:'MID 200s' , src:"/Mid2000s"},
+                {name:'MID 200s' , src:"/Mid2000sP"},
                 {name:'Virino' , src:"/Virino"},
                 {name:'Firehat' , src:"/Firehat"},
                 {name:'Marcos' , src:"/Marcos"},
