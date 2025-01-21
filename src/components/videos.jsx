@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 export function Videos () {
     const videos = [
         {
+            path: "/videos/Style Evolves.gif ",
+            text: "Style Add",
+            href: "/StyleAdd"
+        },
+        {
             
             path: "/videos/Metanoia Gif.gif ",
             text: "Metanoia",
@@ -39,7 +44,7 @@ export function Videos () {
         <>
 
 
-            <div className="z-0 md:m-10  md:videos">
+            <div className="z-0 md:m-10  md:videos pt-10">
                 {videos.map((video, index) => (
                     <div key={index} className="z-0 relative grid pt-2 md:mx-5 md:my-5">
                         

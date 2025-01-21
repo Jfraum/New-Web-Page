@@ -6,6 +6,7 @@ import IndexImages from "../components/Imagenes.jsx"
 
 
 
+
 export default function HomeP () {
     
     return (
@@ -15,6 +16,9 @@ export default function HomeP () {
 
             
             <IndexImages />
+
+           
+        
 
             <Footer />
           

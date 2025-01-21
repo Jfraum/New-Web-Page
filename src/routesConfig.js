@@ -34,6 +34,7 @@ const StreetP = React.lazy(() => import("./pages/subpages/Street"));
 const Virino = React.lazy(() => import("./pages/subpages/Virino"));
 const Motion = React.lazy(() => import("./pages/subpages/MotionGraphics"));
 const You = React.lazy(() => import("./pages/subpages/You"));
+const StyleAdd = React.lazy(() => import("./pages/subpages/StyleAdd"));
 
 
 const routesConfig = [
@@ -69,6 +70,7 @@ const routesConfig = [
     {path: "/Virino" , element: Virino},
     {path: "/Motion", element: Motion},
     {path: "/You", element: You},
+    {path: "/StyleAdd", element: StyleAdd},
 ];
 
 export default routesConfig;
