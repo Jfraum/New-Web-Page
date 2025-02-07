@@ -8,7 +8,7 @@ const HomeP = React.lazy(() => import("./pages/Photography"));
 const HomeC = React.lazy(() => import("./pages/Code"));
 const AboutMe = React.lazy(() => import("./pages/About"));
 const ContactMe = React.lazy(() => import("./pages/ContactMe"));
-const Cinematography = React.lazy(() => import("./pages/Cinematography"));
+const VisualArts = React.lazy(() => import("./pages/VisualArts"));
 const Metanoia = React.lazy(() => import("./pages/subpages/Metanoia"));
 const Reel = React.lazy(() => import("./pages/subpages/Reel"));
 const Things = React.lazy(() => import("./pages/subpages/Things"));
@@ -43,7 +43,7 @@ const routesConfig = [
     { path: "/HomeC", element: HomeC },
     { path: "/AboutMe", element: AboutMe },
     { path: "/ContactMe", element: ContactMe },
-    { path: "/Cinematography", element: Cinematography },
+    { path: "/VisualArts", element: VisualArts },
     { path: "/Metanoia", element: Metanoia },
     { path: "/Reel", element: Reel },
     { path: "/Things", element: Things },

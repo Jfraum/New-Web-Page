@@ -28,8 +28,8 @@ export const links = [
             ]
         }
     ]}, 
-        {name: "Cinematography",
-          src: "/Cinematography"},
+        {name: "Visual Arts",
+          src: "/VisualArts"},
 
         {name: "Code" , 
           src: "/HomeC" }, 
