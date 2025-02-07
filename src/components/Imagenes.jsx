@@ -47,12 +47,6 @@ export default function IndexImages () {
             href: "/Palacio"  
         },
         
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Glerifer%202/_MG_6721%202.jpg?updatedAt=1710156052185",
-            text: "Glerifer 2",
-            href: "/Glerifer2P"
-        },
 
 
         {
@@ -72,12 +66,6 @@ export default function IndexImages () {
             path: "/home%20photos/Ana%20monrro/0.jpg?updatedAt=1712443985799",
             text: "Ana",
             href: "/AnaP"
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Jhuli/_MG_8212.jpg?updatedAt=1734915318032",
-            text: "Jhulianna",
-            href: "/Jhuli"
         },
 
         {
@@ -127,12 +115,6 @@ export default function IndexImages () {
             href: "/Things"
         },
 
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Home%20images/_MG_0936.jpg?updatedAt=1706983369770",
-            text: "Isabel",
-            href: "/IsabelP"
-        },
 
         {
             urlEndpoint: urlEndpoint,

@@ -21,11 +21,6 @@ export function Videos () {
             text: "Cinematography reel",
             href: "/Reel"
         },
-        {
-            path: "/videos/Gif - you.gif",
-            text: "You",
-            href: "/You"
-        },
 
         {
             path: "/videos/Gif - Little Things.gif",
@@ -34,10 +29,18 @@ export function Videos () {
         },
 
         {
+            path: "/videos/break your limits.gif",
+            text: "B Y L",
+            href: "/BYL"
+        },
+
+        {
             path: "/videos/Test.gif",
             text: "Motion",
             href: "/Motion"
         },
+
+
     ]
 
     return (

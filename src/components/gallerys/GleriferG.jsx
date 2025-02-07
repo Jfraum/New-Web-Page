@@ -14,17 +14,12 @@ export default function GleriferG () {
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Glerifer/1.jpg?updatedAt=1705406716129",
+            path: "/home%20photos/Glerifer/3.jpg?updatedAt=1705406715644",
 
         },
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Glerifer/2.jpg?updatedAt=1705406712631",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Glerifer/3.jpg?updatedAt=1705406715644",
 
         },
         {
@@ -50,27 +45,73 @@ export default function GleriferG () {
 
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Glerifer/8.jpg?updatedAt=1706972613978",
+            path: "/home%20photos/Glerifer%202/1.jpg?updatedAt=1710368591457",
+
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/_MG_6722.jpg?updatedAt=1710368559150",
 
         },
 
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Glerifer/9.jpg?updatedAt=1706972613506",
+            path: "/home%20photos/Glerifer%202/4.jpg?updatedAt=1706973179397",
 
         },
 
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Glerifer/10.jpg?updatedAt=1706972615668",
+            path: "/home%20photos/Glerifer%202/8.jpg?updatedAt=1706973179078",
 
         },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/6.jpg?updatedAt=1706973178757",
+
+        },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/7.jpg?updatedAt=1706973178640",
+
+        },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/5.jpg?updatedAt=1706973172664",
+
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/_MG_6746.jpg?updatedAt=1710368559845",
+
+        },
+
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/_MG_6767.jpg?updatedAt=1710368563444",
+
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/home%20photos/Glerifer%202/3.jpg?updatedAt=1710368649539",
+
+        },
+
+
+
+
+
+     
 
         {
             urlEndpoint: urlEndpoint,
             path: "/home%20photos/Glerifer/11.jpg?updatedAt=1706972616068",
 
         },
+ 
 
 
     ]
