@@ -9,6 +9,14 @@ export default function StyleAdd () {
     const images = [
         {
             urlEndpoint: urlEndpoint,
+            path: "/Videos/Capture.PNG?updatedAt=1739019299106",
+        },
+        {
+            urlEndpoint: urlEndpoint,
+            path: "/Videos/Capture%202.PNG?updatedAt=1739019298776",
+        },
+        {
+            urlEndpoint: urlEndpoint,
             path: "/Videos/1029.jpg?updatedAt=1737481883974",
         },
         {

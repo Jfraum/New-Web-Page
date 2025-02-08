@@ -42,7 +42,7 @@ export default function PalacioB () {
         <>
         <Nav />
         <div className=" pt-10 relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl">
-            <iframe src="https://www.youtube.com/embed/OsGkYNW8dHc?autoplay=1&loop=1&controls=0&showinfo=0&modestbranding=1" 
+            <iframe src="https://youtube.com/embed/W6sKTBekthQ" 
             title="YouTube video player" 
             allow="autoplay; encrypted-media"
             allowFullScreen

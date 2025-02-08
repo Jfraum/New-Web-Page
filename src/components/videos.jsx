@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 
 export function Videos () {
     const videos = [
+
+        {
+            path: "/videos/Rians Palacio del Blumer.gif",
+            text: "Palacio del Blumer",
+            href: "/Palacio"
+        },
         {
             path: "/videos/Style Evolves.gif ",
             text: "Style Add",
@@ -13,6 +19,12 @@ export function Videos () {
             path: "/videos/Metanoia Gif.gif ",
             text: "Metanoia",
             href: "/Metanoia"
+        },
+
+        {
+            path: "/videos/break your limits.gif",
+            text: "B Y L",
+            href: "/BYL"
         },
 
         {
@@ -28,17 +40,15 @@ export function Videos () {
             href: "/Things"
         },
 
-        {
-            path: "/videos/break your limits.gif",
-            text: "B Y L",
-            href: "/BYL"
-        },
+        
 
         {
             path: "/videos/Test.gif",
             text: "Motion",
             href: "/Motion"
         },
+
+       
 
 
     ]
