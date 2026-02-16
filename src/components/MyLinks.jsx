@@ -25,6 +25,8 @@ export const links = [
                 {name:'Mafer' , src:"/MaferP"},
                 {name:'Sunshine' , src:"/SunshineP"},
                 {name:'MID 200s' , src:"/Mid2000sP"},
+                {name:'BONS' , src:"/Bons"},
+            
             ]
         }
     ]}, 

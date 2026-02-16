@@ -28,6 +28,12 @@ export default function IndexImages () {
         },
         {
             urlEndpoint: urlEndpoint,
+            path: "/home%20photos/BONS/IMG_6651.jpg",
+            text: "BONS",
+            href:"/Bons"
+        },      
+        {
+            urlEndpoint: urlEndpoint,
             path: "/home%20photos/Home%20images/4.jpg?updatedAt=1704074419778",
             text: "Alessandra",
             href:"/AlessandraP"

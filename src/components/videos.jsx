@@ -5,6 +5,38 @@ export function Videos () {
     const videos = [
 
         {
+            path: "/videos/Castro Carazo.gif",
+            text: "Universidad Castro Carazo",
+            href: "/Castro"
+        },
+        {
+            path: "/videos/DTH.gif",
+            text: "Digital Training Hub",
+            href: "/DTH"
+        },
+        {
+            path: "/videos/JYCH.gif",
+            text: "JYCH",
+            href: "/JYCH"
+        },
+        {
+            path: "/videos/Kajiri.gif",
+            text: "Kajiri",
+            href: "/Kajiri"
+        },
+        {
+            path: "/videos/KOI +.gif",
+            text: "KOI +",
+            href: "/KOI"
+        },
+       
+        {
+            path: "/videos/Lions Club.gif",
+            text: "LIONs CLUB",
+            href: "/Lions"
+        },
+
+        {
             path: "/videos/Rians Palacio del Blumer.gif",
             text: "Palacio del Blumer",
             href: "/Palacio"
@@ -20,6 +52,34 @@ export function Videos () {
             text: "Metanoia",
             href: "/Metanoia"
         },
+        {
+            path: "/videos/LA CASA DE LAS SILLAS.gif",
+            text: "LA CASA DE LAS SILLAS",
+            href: "/LCS"
+        },
+        {
+            path: "/videos/Posh.gif",
+            text: "POSH",
+            href: "/POSH"
+        },
+       
+        {
+            path: "/videos/Samadhi Spa.gif",
+            text: "Samadhi Spa",
+            href: "/Samadhi"
+        },
+       
+
+        {
+            path: "/videos/TEC.gif",
+            text: "TEC",
+            href: "/TEC"
+        },
+
+
+
+
+        
 
         {
             path: "/videos/break your limits.gif",
@@ -39,8 +99,6 @@ export function Videos () {
             text: "Little Things",
             href: "/Things"
         },
-
-        
 
         {
             path: "/videos/Test.gif",
