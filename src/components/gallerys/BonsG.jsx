@@ -16,62 +16,52 @@ export default function BonsG () {
     const images = [
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6647.jpg",
+            path: "/home%20photos/BONS/IMG_6651.jpg?updatedAt=1771269414243",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6834.jpg",
+            path: "/home%20photos/BONS/IMG_6599.jpg?updatedAt=1771269414311",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6834.jpg",
+            path: "/home%20photos/BONS/IMG_6647.jpg?updatedAt=1771269414982",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6599.jpg",
+            path: "/home%20photos/BONS/IMG_6834.jpg?updatedAt=1771269414374g",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6615.jpg",
+            path: "/home%20photos/BONS/IMG_6856.jpg?updatedAt=1771269414310",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6651.jpg",
+            path: "/home%20photos/BONS/IMG_6856.jpg?updatedAt=1771269414310",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6654.jpg",
+            path: "/home%20photos/BONS/IMG_6615.jpg?updatedAt=1771269413979",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6611.jpg",
+            path: "/home%20photos/BONS/IMG_6636.jpg?updatedAt=1771269413973",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6856.jpg",
+            path: "/home%20photos/BONS/IMG_6636.jpg?updatedAt=1771269413973",
 
         },
         {
             urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6636.jpg",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6832.jpg",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/BONS/IMG_6615.jpg",
+            path: "/home%20photos/BONS/IMG_6843.JPG?updatedAt=1771269412804",
 
         },
     
