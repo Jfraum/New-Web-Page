@@ -1,107 +1,69 @@
 import React from "react";
-import { IKImage , IKContext } from "imagekitio-react";
-
-
+import { IKImage, IKContext } from "imagekitio-react";
+import { motion } from "framer-motion";
 
 const urlEndpoint = import.meta.env.VITE_REACT_APP_API_KEY;
 
-export default function SunmodelG () {
+// Variantes de animación para mantener la consistencia en el portafolio
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: "easeOut" } 
+  },
+};
 
-    const images = [
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/0.jpg?updatedAt=1707067766768",
+export default function SunmodelG() {
+  const images = [
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/0.jpg?updatedAt=1707067766768" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/1.jpg?updatedAt=1707067765474" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/2.jpg?updatedAt=1707067768571" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/3.jpg?updatedAt=1707067765699" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/4.jpg?updatedAt=1707067768764" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/5.jpg?updatedAt=1707067768036" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/6.jpg?updatedAt=1707067768583" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/7.jpg?updatedAt=1707067762209" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/8.jpg?updatedAt=1707067760696" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/9.jpg?updatedAt=1707067767283" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/10.jpg?updatedAt=1707067771967" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/11.jpg?updatedAt=1707067780065" },
+    { urlEndpoint: urlEndpoint, path: "/home%20photos/Sun%20Model/12.jpg?updatedAt=1707067775532" },
+  ];
 
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/1.jpg?updatedAt=1707067765474",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/2.jpg?updatedAt=1707067768571",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/3.jpg?updatedAt=1707067765699",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/4.jpg?updatedAt=1707067768764",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/5.jpg?updatedAt=1707067768036",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/6.jpg?updatedAt=1707067768583",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/7.jpg?updatedAt=1707067762209",
-
-        },
-
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/8.jpg?updatedAt=1707067760696",
-
-        },
-
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/9.jpg?updatedAt=1707067767283",
-
-        },
-
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/10.jpg?updatedAt=1707067771967",
-
-        },
-
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/11.jpg?updatedAt=1707067780065",
-
-        },
-        {
-            urlEndpoint: urlEndpoint,
-            path: "/home%20photos/Sun%20Model/12.jpg?updatedAt=1707067775532",
-
-        },
-
-
-
-    ]
-
-    return (
-      <>
-
-          <IKContext
-  
-        queryParameters={{
-          blurUpRes: "20",
-              }}>
-              <div className=" z-0 mt-10  md:px-2 md:mx-auto md:max-w-7xl md:masonry">
-                  {images.map((image, index) => (
-                  <div className=""  key={index}>
-                      <div className="m-2">
-                      <IKImage urlEndpoint={image.urlEndpoint} path={image.path}  loading="lazy"
-                      lqip={{ active: true, quality: 20 }}/>
-                      </div>
-                  </div>
-                  ))}
-              </div>
-          </IKContext>
-      </>
-      )
-    
+  return (
+    <IKContext queryParameters={{ blurUpRes: "20" }}>
+      <div className="z-0 mt-10 md:px-2 md:mx-auto md:max-w-7xl md:masonry">
+        {images.map((image, index) => (
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            // Se activa cuando el 15% de la imagen entra en pantalla
+            viewport={{ once: false, amount: 0.15, margin: "0px 0px -50px 0px" }}
+            className="mb-4 break-inside-avoid"
+          >
+            <div className="m-2 overflow-hidden rounded-lg bg-zinc-900 shadow-md">
+              <IKImage
+                urlEndpoint={image.urlEndpoint}
+                path={image.path}
+                loading="lazy"
+                lqip={{ active: true, quality: 20 }}
+                // Transformaciones para optimizar peso y calidad
+                transformation={[
+                  {
+                    width: "800",
+                    quality: "80",
+                    format: "webp",
+                  },
+                ]}
+                className="w-full h-auto block hover:scale-105 transition-transform duration-500 cursor-pointer"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </IKContext>
+  );
 }
