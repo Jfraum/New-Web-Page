@@ -46,6 +46,8 @@ const TEC = React.lazy(() => import("./pages/subpages/TEC"));
 const StyleAdd = React.lazy(() => import("./pages/subpages/StyleAdd"));
 const BonsP = React.lazy(() => import("./pages/subpages/Bons"));
 
+const HighP = React.lazy(() => import("./pages/subpages/High"));
+
 
 const routesConfig = [
     { path: "/", element: Home },
@@ -92,6 +94,7 @@ const routesConfig = [
     {path: "/Samadhi", element: Samadhi},
     {path: "/TEC", element: TEC},
     {path: "/Bons", element: BonsP},
+     {path: "/HighP", element: HighP},
 
 ];
 

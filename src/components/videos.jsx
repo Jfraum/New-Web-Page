@@ -58,6 +58,12 @@ export function Videos () {
             href: "/LCS"
         },
         {
+            path: "/videos/Challenge GIF 2.gif",
+            text: "High Value Density",
+            href: "/highP"
+        },
+       
+        {
             path: "/videos/Posh.gif",
             text: "POSH",
             href: "/POSH"
