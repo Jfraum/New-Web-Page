@@ -30,7 +30,7 @@ export const links = [
             ]
         }
     ]}, 
-        {name: "Visual Arts",
+        {name: "Video Editing",
           src: "/VisualArts"},
 
         {name: "Code" , 

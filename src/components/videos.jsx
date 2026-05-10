@@ -14,6 +14,7 @@ const videoItemVariants = {
 
 export function Videos() {
   const videos = [
+    { path: "/videos/VILLA GIF.gif", text: "Villa Edit", href: "/VillaEdit" },
     { path: "/videos/Castro Carazo.gif", text: "Universidad Castro Carazo", href: "/Castro" },
     { path: "/videos/DTH.gif", text: "Digital Training Hub", href: "/DTH" },
     { path: "/videos/JYCH.gif", text: "JYCH", href: "/JYCH" },
