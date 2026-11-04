@@ -167,6 +167,18 @@ export default function Home() {
 
   // 1. VIDEOS DESTACADOS
   const featuredVideos = [
+{
+      id: 18,
+      title: lang === "es" ? "Dr. Alex Dunlop — YouTube Long-Form (Salud)" : "Dr. Alex Dunlop — YouTube Long-Form (Health)",
+      category: lang === "es" ? "YouTube & Retención" : "YouTube & Retention",
+      tools: "DaVinci Resolve • Motion Graphics • Sound Design",
+      thumbnail: "/media/videos/alex-dunlop.webp",
+      fallbackThumb: "public/videos/EN youtube Video.gif",
+      videoUrl: "https://www.youtube.com/embed/lLs56mFwN8Y?autoplay=1",
+      link: "https://youtu.be/lLs56mFwN8Y",
+      vertical: false
+    },
+
     {
       id: 18,
       title: lang === "es" ? "Dr. Alex Dunlop — YouTube Long-Form (Salud)" : "Dr. Alex Dunlop — YouTube Long-Form (Health)",
