@@ -172,7 +172,7 @@ export default function Home() {
       title: lang === "es" ? "Dr. Alex Dunlop — YouTube Long-Form (Salud)" : "Dr. Alex Dunlop — YouTube Long-Form (Health)",
       category: lang === "es" ? "YouTube & Retención" : "YouTube & Retention",
       tools: "DaVinci Resolve • Motion Graphics • Sound Design",
-      thumbnail: "/media/videos/alex-dunlop.webp",
+      thumbnail: "/media/videos/EN youtube Video.webp",
       fallbackThumb: "public/videos/EN youtube Video.gif",
       videoUrl: "https://www.youtube.com/embed/lLs56mFwN8Y?autoplay=1",
       link: "https://youtu.be/lLs56mFwN8Y",
