@@ -115,15 +115,12 @@ export default function Home() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Estado de fondo más oscuro al bajar de 20px
       setIsScrolled(currentScrollY > 20);
 
-      // Si baja más de 80px y el usuario continúa hacia abajo -> oculta el nav
       if (currentScrollY > 80 && currentScrollY > lastScrollY.current) {
         setNavVisible(false);
-        setMobileMenuOpen(false); // Cierra menú desplegable si está abierto
+        setMobileMenuOpen(false);
       } else {
-        // Al subir -> reaparece inmediatamente
         setNavVisible(true);
       }
 
@@ -165,23 +162,23 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // 1. VIDEOS DESTACADOS
+  // 1. VIDEOS DESTACADOS (CON EL VIDEO DE 11K VISTAS EN EL PRIMER PUESTO)
   const featuredVideos = [
-{
-      id: 18,
+    {
+      id: "dunlop-yt-en",
       title: lang === "es" ? "Dr. Alex Dunlop — YouTube Long-Form (Salud)" : "Dr. Alex Dunlop — YouTube Long-Form (Health)",
       category: lang === "es" ? "YouTube & Retención" : "YouTube & Retention",
       tools: "DaVinci Resolve • Motion Graphics • Sound Design",
+      badge: "11K+ Views", // Insignia de prueba social
       thumbnail: "/media/videos/EN youtube Video.webp",
-      fallbackThumb: "public/videos/EN youtube Video.gif",
+      fallbackThumb: "/videos/EN youtube Video.gif", // Corregido: sin prefijo "public"
       videoUrl: "https://www.youtube.com/embed/lLs56mFwN8Y?autoplay=1",
       link: "https://youtu.be/lLs56mFwN8Y",
       vertical: false
     },
-
     {
       id: 18,
-      title: lang === "es" ? "Dr. Alex Dunlop — YouTube Long-Form (Salud)" : "Dr. Alex Dunlop — YouTube Long-Form (Health)",
+      title: lang === "es" ? "5 Mitos Sobre la Ciática Que Escucho Cada Semana" : "5 Sciatica Myths I Hear Every Week",
       category: lang === "es" ? "YouTube & Retención" : "YouTube & Retention",
       tools: "DaVinci Resolve • Motion Graphics • Sound Design",
       thumbnail: "/media/videos/alex-dunlop.webp",
@@ -390,7 +387,7 @@ export default function Home() {
     }
   ];
 
-  // 2. FOTOGRAFÍAS CON PARÁMETROS IMAGEKIT OPTIMIZADOS
+  // 2. FOTOGRAFÍAS
   const rawPhotos = [
     { id: 1, title: "Virino — Malvie Magazine", category: "editorial", file: "04_This_is_VIRINO_image3_MALVIE_Magazine-140.jpg" },
     { id: 2, title: "Dulces Caprichosos", category: "commercial", file: "_MG_1117.jpg" },
@@ -427,7 +424,6 @@ export default function Home() {
 
   const filteredPhotos = filter === "all" ? photos : photos.filter((p) => p.category === filter);
 
-  // Navegación en Lightbox
   const showPrevPhoto = (e) => {
     e?.stopPropagation();
     setSelectedPhotoIndex((prev) => (prev > 0 ? prev - 1 : filteredPhotos.length - 1));
@@ -438,7 +434,6 @@ export default function Home() {
     setSelectedPhotoIndex((prev) => (prev < filteredPhotos.length - 1 ? prev + 1 : 0));
   };
 
-  // Controles de teclado
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
@@ -456,7 +451,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#141212] text-[#eacdc2] antialiased selection:bg-[#eacdc2] selection:text-[#141212] overflow-x-hidden">
-      {/* ANIMACIONES & ACCESIBILIDAD */}
       <style>{`
         .scroll-section {
           opacity: 0;
@@ -511,7 +505,6 @@ export default function Home() {
             <a href="#photography" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">{t.navPhotos}</a>
             <a href="#about" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">{t.navAbout}</a>
             
-            {/* Toggle de Idioma ES | EN */}
             <button
               onClick={() => setLang(lang === "es" ? "en" : "es")}
               aria-label="Cambiar idioma / Switch language"
@@ -560,7 +553,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Desplegable Móvil */}
         {mobileMenuOpen && (
           <div className="sm:hidden border-b border-[#eacdc2]/15 bg-[#141212] px-6 py-4 flex flex-col gap-3 font-mono text-sm">
             <a 
@@ -588,7 +580,7 @@ export default function Home() {
         )}
       </header>
 
-      {/* CONTENIDO PRINCIPAL CON OFFSET SUPERIOR PARA LA BARRA FLOTANTE */}
+      {/* CONTENIDO PRINCIPAL */}
       <main className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-10 pt-24 sm:pt-32 pb-20 sm:pb-28 space-y-20 sm:space-y-28 2xl:space-y-36">
         {/* HERO */}
         <section 
@@ -629,7 +621,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Foto de perfil optimizada */}
           <div className="order-1 md:order-2 md:col-span-4 flex justify-center md:justify-end">
             <div className="relative p-2 sm:p-3 rounded-2xl border border-[#eacdc2]/20 bg-[#eacdc2]/5 backdrop-blur-sm w-40 sm:w-60 md:w-full max-w-[280px]">
               <img 
@@ -707,9 +698,20 @@ export default function Home() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 pointer-events-none"
                     loading="lazy"
                   />
+                  
+                  {/* Badge de Categoría (Izquierda) */}
                   <div className="absolute top-2.5 left-2.5 bg-[#141212]/90 backdrop-blur-md px-2.5 py-0.5 rounded text-[11px] font-mono text-[#eacdc2] uppercase tracking-wider border border-[#eacdc2]/25">
                     {video.category}
                   </div>
+
+                  {/* Badge Destacado de Métricas (Derecha, si existe) */}
+                  {video.badge && (
+                    <div className="absolute top-2.5 right-2.5 bg-emerald-500/20 backdrop-blur-md px-2 py-0.5 rounded text-[11px] font-mono text-emerald-300 font-bold tracking-wider border border-emerald-400/40 flex items-center gap-1 shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      {video.badge}
+                    </div>
+                  )}
+
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
                     <span className="p-3 rounded-full bg-[#eacdc2] text-[#141212]">
                       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
