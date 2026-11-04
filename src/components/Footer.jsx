@@ -1,8 +1,36 @@
 import React, { useState } from "react";
 
-export default function Footer() {
+const FOOTER_COPY = {
+  es: {
+    label: "Contacto & Contratación",
+    titleLine1: "¿Buscas escalar tu contenido?",
+    titleLine2: "Construyamos algo visualmente potente.",
+    subtitle:
+      "Disponible para retainers mensuales, canales de YouTube, Motion Graphics y campañas comerciales en EE. UU. y Latinoamérica. Respuesta garantizada en menos de 24 horas.",
+    emailBtn: "Escríbeme un correo",
+    emailSubject: "Propuesta%20de%20Proyecto%20%2F%20Retainer%20Audiovisual",
+    copyTitle: "Copiar correo al portapapeles",
+    copiedText: "¡Copiado al portapapeles!",
+    roleFooter: "Senior Video Editor, Motion Designer & Cinematographer"
+  },
+  en: {
+    label: "Contact & Booking",
+    titleLine1: "Ready to scale your content?",
+    titleLine2: "Let's build high-retention visuals.",
+    subtitle:
+      "Available for monthly retainers, YouTube channels, Motion Graphics, and commercial campaigns across the US and worldwide. Guaranteed response within 24 hours.",
+    emailBtn: "Send Me an Email",
+    emailSubject: "Video%20Editing%20%26%20Motion%20Design%20Inquiry",
+    copyTitle: "Copy email to clipboard",
+    copiedText: "Copied to clipboard!",
+    roleFooter: "Senior Video Editor, Motion Designer & Cinematographer"
+  }
+};
+
+export default function Footer({ lang = "es" }) {
   const [copied, setCopied] = useState(false);
   const email = "jfrauditamacia@gmail.com";
+  const t = FOOTER_COPY[lang] || FOOTER_COPY.es;
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -11,54 +39,58 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-[#eacdc2]/15 bg-[#1e1e1e] text-[#eacdc2] pt-20 pb-12 px-6">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <footer
+      id="contacto"
+      className="scroll-mt-20 border-t border-[#eacdc2]/15 bg-[#1e1e1e] text-[#eacdc2] pt-20 pb-12 px-6"
+    >
+      <div className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto space-y-16">
         {/* BLOQUE CTA PRINCIPAL */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
           <div className="md:col-span-8 space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/60">
-              Contacto & Contratación
+            <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/60 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              {t.label}
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#eacdc2] leading-tight">
-              ¿Tienes un proyecto en mente? <br />
-              <span className="opacity-90">Construyamos algo visualmente potente.</span>
+              {t.titleLine1} <br />
+              <span className="opacity-90">{t.titleLine2}</span>
             </h2>
-            <p className="text-sm md:text-base text-[#eacdc2]/80 max-w-xl font-light">
-              Disponible para proyectos comerciales, edición remota de alto impacto y dirección fotográfica. Hablemos de tiempos y entregas.
+            <p className="text-sm md:text-base text-[#eacdc2]/80 max-w-2xl font-light leading-relaxed">
+              {t.subtitle}
             </p>
           </div>
 
           {/* BOTONES DE CORREO */}
           <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-start md:items-end">
             <a
-              href={`mailto:${email}?subject=Propuesta%20de%20Proyecto%20Audiovisual`}
-              className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#eacdc2] text-[#1e1e1e] font-bold text-sm hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#eacdc2]/10"
+              href={`mailto:${email}?subject=${t.emailSubject}`}
+              className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#eacdc2] text-[#1e1e1e] font-bold text-sm hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#eacdc2]/10 min-h-[44px]"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              Escríbeme un correo
+              {t.emailBtn}
             </a>
 
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-[#eacdc2]/25 bg-[#eacdc2]/5 hover:bg-[#eacdc2]/15 text-xs font-mono text-[#eacdc2] transition-colors"
-              title="Copiar correo al portapapeles"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-[#eacdc2]/25 bg-[#eacdc2]/5 hover:bg-[#eacdc2]/15 text-xs font-mono text-[#eacdc2] transition-colors min-h-[44px]"
+              title={t.copyTitle}
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
-              {copied ? "¡Copiado al portapapeles!" : email}
+              {copied ? t.copiedText : email}
             </button>
           </div>
         </div>
 
         {/* LÍNEA INFERIOR: IDENTIDAD Y REDES SOCIALES */}
         <div className="pt-8 border-t border-[#eacdc2]/15 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-[#eacdc2]/60 font-mono">
-          <div className="flex items-center gap-2 text-center sm:text-left">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-center sm:text-left">
             <span>© {new Date().getFullYear()} Juan Macia.</span>
             <span className="hidden sm:inline">•</span>
-            <span className="text-[#eacdc2]/80">Edición de Video & Fotografía</span>
+            <span className="text-[#eacdc2]/80">{t.roleFooter}</span>
           </div>
 
           <div className="flex items-center gap-5">
@@ -92,13 +124,13 @@ export default function Footer() {
               <span className="hidden md:inline font-sans font-medium text-[13px]">Instagram</span>
             </a>
 
-            {/* YouTube */}
+            {/* YouTube (Apuntando a tu Showreel directamente) */}
             <a
-              href="https://youtube.com"
+              href="https://youtu.be/60rsebZLSEk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-[#eacdc2] transition-colors group"
-              aria-label="YouTube"
+              aria-label="YouTube Showreel"
             >
               <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -108,7 +140,7 @@ export default function Footer() {
 
             {/* Email */}
             <a
-              href={`mailto:${email}`}
+              href={`mailto:${email}?subject=${t.emailSubject}`}
               className="flex items-center gap-1.5 hover:text-[#eacdc2] transition-colors group"
               aria-label="Email directo"
             >

@@ -4,7 +4,93 @@ import Footer from "../components/Footer";
 // PREFIJO BASE DE IMAGEKIT
 const IMAGEKIT_BASE = "https://ik.imagekit.io/f10c3to17/home%20photos/Fotos%20para%20Usar%20p%C3%A1gina%20principal";
 
+// DICCIONARIO BILINGÜE DE ALTO IMPACTO COMERCIAL (ES / EN)
+const COPY = {
+  es: {
+    navVideos: "Videos",
+    navPhotos: "Fotografía",
+    navAbout: "Sobre Mí",
+    navAboutMobile: "Sobre Mí & Credenciales",
+    navContact: "Contacto",
+    heroBadge: "Senior Video Editor & Motion Designer • USA & Global (Inglés C2)",
+    heroTitle: "Edición de alta retención, Motion Graphics y color cinematográfico.",
+    heroSubtitle: "Transformo contenido crudo en activos visuales que retienen la audiencia y escalan marcas. Especializado en YouTube Long-Form, Short-Form dinámico y dirección visual para creadores y agencias.",
+    ctaVideos: "Ver Portafolio de Video",
+    ctaContact: "Agendar Llamada / Contacto",
+    ctaPhotos: "Fotografía",
+    credsCollab: "Clientes & Agencias:",
+    credsPhoto: "Publicado en:",
+    workLabel: "Casos de Estudio & Postproducción",
+    workTitle: "Edición de Video & Motion Design",
+    photoLabel: "Frames & Stills",
+    photoTitle: "Fotografía & Dirección de Color",
+    filterAll: "Todas",
+    filterEditorial: "Editorial",
+    filterCommercial: "Comercial",
+    filterPortrait: "Retrato",
+    aboutLabel: "Perfil Profesional",
+    aboutTitle: "Sobre Mí",
+    aboutBadge: "Disponible para retainers mensuales y proyectos",
+    aboutP1: "Editor de video, Motion Designer y director de fotografía enfocado en retención de audiencia y narrativa visual de alto impacto. Integro ritmo de montaje estratégico, gráficos animados en After Effects, diseño sonoro inmersivo y gradación de color avanzada en DaVinci Resolve para transformar cada pieza en un motor de atención.",
+    aboutP2_1: "Actualmente colaboro de forma remota con agencias y marcas internacionales como ",
+    aboutP2_2: " y ",
+    aboutP2_3: ", liderando la postproducción de canales de YouTube y campañas de redes sociales para mercados en ",
+    aboutP2_4: " y ",
+    aboutP2_5: ", optimizadas para maximizar el tiempo de visualización (Watch Time) y la conversión.",
+    specTitle: "Especialidad",
+    specValue: "Edición de Retención, Motion Graphics & Color",
+    toolsTitle: "Stack Técnico",
+    reachTitle: "Alcance & Idiomas",
+    reachValue: "Remoto (USA • CR • Global)",
+    reachLang: "Bilingüe: Inglés (C2) & Español",
+    closeEsc: "Cerrar (Esc)"
+  },
+  en: {
+    navVideos: "Videos",
+    navPhotos: "Photography",
+    navAbout: "About",
+    navAboutMobile: "About & Credentials",
+    navContact: "Book a Call",
+    heroBadge: "Senior Video Editor & Motion Designer • US & Global (C2 English)",
+    heroTitle: "High-retention video editing, Motion Graphics & cinematic color.",
+    heroSubtitle: "I turn raw footage into high-performing visual assets that hold attention and scale brands. Specialized in YouTube Long-Form, dynamic Short-Form, and visual direction for creators and agencies.",
+    ctaVideos: "Watch Video Portfolio",
+    ctaContact: "Work With Me",
+    ctaPhotos: "Photography",
+    credsCollab: "Clients & Agencies:",
+    credsPhoto: "Featured in:",
+    workLabel: "Case Studies & Post-Production",
+    workTitle: "Video Editing & Motion Design",
+    photoLabel: "Frames & Stills",
+    photoTitle: "Selected Photography",
+    filterAll: "All",
+    filterEditorial: "Editorial",
+    filterCommercial: "Commercial",
+    filterPortrait: "Portrait",
+    aboutLabel: "Professional Profile",
+    aboutTitle: "About Me",
+    aboutBadge: "Available for monthly retainers & projects",
+    aboutP1: "Video Editor, Motion Designer, and Cinematographer focused on audience retention and high-impact visual storytelling. I combine strategic pacing, custom After Effects motion graphics, immersive sound design, and advanced DaVinci Resolve color grading to turn every video into a growth asset.",
+    aboutP2_1: "I currently partner remotely with international agencies and brands like ",
+    aboutP2_2: " and ",
+    aboutP2_3: ", leading post-production for YouTube channels and social media campaigns across ",
+    aboutP2_4: " and the ",
+    aboutP2_5: ", engineered for sustained watch time and client conversion.",
+    specTitle: "Core Focus",
+    specValue: "Retention Editing, Motion Graphics & Color",
+    toolsTitle: "Tech Stack",
+    reachTitle: "Reach & Languages",
+    reachValue: "Remote (US • CR • Global)",
+    reachLang: "Bilingual: English (C2) & Spanish",
+    closeEsc: "Close (Esc)"
+  }
+};
+
 export default function Home() {
+  // Idioma ("es" por defecto, cambiable a "en" con un clic en el header)
+  const [lang, setLang] = useState("es");
+  const t = COPY[lang];
+
   const [filter, setFilter] = useState("all");
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
@@ -49,24 +135,13 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // 1. VIDEOS CON CATEGORÍAS UNIFICADAS EN ESPAÑOL Y SOPORTE EMBED
+  // 1. VIDEOS ORIENTADOS A RESULTADOS, CASOS DE ESTUDIO Y STACK TÉCNICO COMPLETO
   const featuredVideos = [
     {
-      id: 1,
-      title: "Cinematography Reel",
-      category: "Cinematografía",
-      tools: "DaVinci Resolve • Premiere Pro",
-      thumbnail: "/media/videos/cinematography-reel.webp",
-      fallbackThumb: "/videos/Cinematography reel.gif",
-      videoUrl: "https://www.youtube.com/embed/60rsebZLSEk?autoplay=1",
-      link: "https://youtu.be/60rsebZLSEk",
-      vertical: false
-    },
-    {
       id: 18,
-      title: "5 Mitos Sobre la Ciática Que Escucho Cada Semana",
-      category: "Educativo & Formato Largo",
-      tools: "DaVinci Resolve",
+      title: lang === "es" ? "Dr. Alex Dunlop — YouTube Long-Form (Salud)" : "Dr. Alex Dunlop — YouTube Long-Form (Health)",
+      category: lang === "es" ? "YouTube & Retención" : "YouTube & Retention",
+      tools: "DaVinci Resolve • Motion Graphics • Sound Design",
       thumbnail: "/media/videos/alex-dunlop.webp",
       fallbackThumb: "/videos/Alex Dunlop - YOUTUBE GIF.gif",
       videoUrl: "https://www.youtube.com/embed/e6bZwc5qtlk?autoplay=1",
@@ -75,9 +150,9 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Castro Carazo - Subtítulos Animados",
-      category: "Educativo & Formato Largo",
-      tools: "DaVinci Resolve",
+      title: lang === "es" ? "Univ. Castro Carazo — Campaña & Motion" : "Castro Carazo Univ. — Dynamic Captions & Motion",
+      category: lang === "es" ? "Educativo & Formato Largo" : "Educational & Long-Form",
+      tools: "DaVinci Resolve • After Effects • Subtítulos Animados",
       thumbnail: "/media/videos/castro-carazo.webp",
       fallbackThumb: "/videos/Castro Carazo.gif",
       videoUrl: "https://www.youtube.com/embed/7Thwdtxv0b0?autoplay=1",
@@ -86,9 +161,9 @@ export default function Home() {
     },
     {
       id: 20,
-      title: "Dr. Alex Dunlop - Reels",
-      category: "Formato Corto",
-      tools: "DaVinci Resolve",
+      title: lang === "es" ? "Dr. Alex Dunlop — Reels de Alta Retención" : "Dr. Alex Dunlop — High-Retention Reels",
+      category: lang === "es" ? "Short-Form Vertical" : "Short-Form Vertical",
+      tools: "DaVinci Resolve • Visual Hooks • Ritmo Narrativo",
       thumbnail: "/media/videos/es-sciatica.webp",
       fallbackThumb: "/videos/ES Sciatica wk55 gif.gif",
       videoUrl: null, // Abre en enlace al ser de Instagram
@@ -96,10 +171,43 @@ export default function Home() {
       vertical: true
     },
     {
+      id: 1,
+      title: "Cinematography & Color Grading Showreel",
+      category: lang === "es" ? "Cinematografía & Color" : "Cinematography & Color",
+      tools: "DaVinci Resolve • Premiere Pro • Color Grading",
+      thumbnail: "/media/videos/cinematography-reel.webp",
+      fallbackThumb: "/videos/Cinematography reel.gif",
+      videoUrl: "https://www.youtube.com/embed/60rsebZLSEk?autoplay=1",
+      link: "https://youtu.be/60rsebZLSEk",
+      vertical: false
+    },
+    {
+      id: 5,
+      title: "Digital Training Hub — Brand Video",
+      category: lang === "es" ? "Comercial & Long-Form" : "Commercial & Long-Form",
+      tools: "DaVinci Resolve • After Effects • Motion Design",
+      thumbnail: "/media/videos/dth.webp",
+      fallbackThumb: "/videos/DTH.gif",
+      videoUrl: "https://www.youtube.com/embed/Y-OpbMl-DyQ?autoplay=1",
+      link: "https://youtu.be/Y-OpbMl-DyQ",
+      vertical: false
+    },
+    {
+      id: 15,
+      title: "Style Evolves — VFX & Motion",
+      category: lang === "es" ? "VFX & Motion Graphics" : "VFX & Motion Graphics",
+      tools: "After Effects • DaVinci Resolve • Sound FX",
+      thumbnail: "/media/videos/style-evolves.webp",
+      fallbackThumb: "/videos/Style Evolves.gif",
+      videoUrl: "https://www.youtube.com/embed/zovxASpZiDo?autoplay=1",
+      link: "https://youtu.be/zovxASpZiDo",
+      vertical: false
+    },
+    {
       id: 3,
-      title: "BYL - Break Your Limits",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve",
+      title: "BYL — Break Your Limits",
+      category: lang === "es" ? "Comercial & Short-Form" : "Commercial & Short-Form",
+      tools: "DaVinci Resolve • Sound Design • Color Grading",
       thumbnail: "/media/videos/break-your-limits.webp",
       fallbackThumb: "/videos/break your limits.gif",
       videoUrl: "https://www.youtube.com/embed/mw6cvqMss9U?autoplay=1",
@@ -108,9 +216,9 @@ export default function Home() {
     },
     {
       id: 4,
-      title: "Challenge",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve",
+      title: "Challenge — High-Paced Edit",
+      category: lang === "es" ? "Comercial & Short-Form" : "Commercial & Short-Form",
+      tools: "DaVinci Resolve • Corte Rítmico • Sound FX",
       thumbnail: "/media/videos/challenge.webp",
       fallbackThumb: "/videos/Challenge GIF 2.gif",
       videoUrl: "https://www.youtube.com/embed/yzVMgoir7tU?autoplay=1",
@@ -118,32 +226,10 @@ export default function Home() {
       vertical: false
     },
     {
-      id: 5,
-      title: "Digital Training Hub",
-      category: "Comercial & Formato Largo",
-      tools: "DaVinci Resolve • After Effects",
-      thumbnail: "/media/videos/dth.webp",
-      fallbackThumb: "/videos/DTH.gif",
-      videoUrl: "https://www.youtube.com/embed/Y-OpbMl-DyQ?autoplay=1",
-      link: "https://youtu.be/Y-OpbMl-DyQ",
-      vertical: false
-    },
-    {
-      id: 6,
-      title: "Little Things",
-      category: "Cinematografía & Formato Corto",
-      tools: "DaVinci Resolve",
-      thumbnail: "/media/videos/little-things.webp",
-      fallbackThumb: "/videos/Gif - Little Things.gif",
-      videoUrl: "https://www.youtube.com/embed/OsGkYNW8dHc?autoplay=1",
-      link: "https://youtu.be/OsGkYNW8dHc",
-      vertical: false
-    },
-    {
       id: 7,
-      title: "JYCH",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve • After Effects",
+      title: "JYCH — Dynamic Commercial",
+      category: lang === "es" ? "Comercial & Motion" : "Commercial & Motion",
+      tools: "DaVinci Resolve • After Effects • Color",
       thumbnail: "/media/videos/jych.webp",
       fallbackThumb: "/videos/JYCH.gif",
       videoUrl: "https://www.youtube.com/embed/l2FblPLEGB0?autoplay=1",
@@ -151,32 +237,10 @@ export default function Home() {
       vertical: false
     },
     {
-      id: 8,
-      title: "Kajiri",
-      category: "Formato Corto",
-      tools: "DaVinci Resolve",
-      thumbnail: "/media/videos/kajiri.webp",
-      fallbackThumb: "/videos/Kajiri.gif",
-      videoUrl: "https://www.youtube.com/embed/Yn1EKm9CG9k?autoplay=1",
-      link: "https://youtu.be/Yn1EKm9CG9k",
-      vertical: true
-    },
-    {
-      id: 9,
-      title: "Koi +",
-      category: "IA & Formato Corto",
-      tools: "DaVinci Resolve",
-      thumbnail: "/media/videos/koi.webp",
-      fallbackThumb: "/videos/KOI +.gif",
-      videoUrl: "https://www.youtube.com/embed/ah9t8jODlsY?autoplay=1",
-      link: "https://youtu.be/ah9t8jODlsY",
-      vertical: false
-    },
-    {
       id: 10,
-      title: "Lions Club",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve • After Effects",
+      title: "Lions Club — Brand Storytelling",
+      category: lang === "es" ? "Comercial & Short-Form" : "Commercial & Short-Form",
+      tools: "DaVinci Resolve • After Effects • Storytelling",
       thumbnail: "/media/videos/lions-club.webp",
       fallbackThumb: "/videos/Lions Club.gif",
       videoUrl: "https://www.youtube.com/embed/hA8TLKag1hw?autoplay=1",
@@ -185,9 +249,9 @@ export default function Home() {
     },
     {
       id: 11,
-      title: "La Casa de las Sillas",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve",
+      title: "La Casa de las Sillas — Dirección & Edición",
+      category: lang === "es" ? "Comercial & Producto" : "Commercial & Product",
+      tools: "DaVinci Resolve • Dirección Audiovisual • Color",
       thumbnail: "/media/videos/la-casa-de-las-sillas.webp",
       fallbackThumb: "/videos/LA CASA DE LAS SILLAS.gif",
       videoUrl: "https://www.youtube.com/embed/ihJWXDvcl4o?autoplay=1",
@@ -195,21 +259,10 @@ export default function Home() {
       vertical: false
     },
     {
-      id: 12,
-      title: "Metanoia",
-      category: "Cinematografía & Cortometraje",
-      tools: "DaVinci Resolve • Premiere Pro",
-      thumbnail: "/media/videos/metanoia.webp",
-      fallbackThumb: "/videos/Metanoia Gif.gif",
-      videoUrl: "https://www.youtube.com/embed/UHYV2J1aJ7c?autoplay=1",
-      link: "https://youtu.be/UHYV2J1aJ7c",
-      vertical: false
-    },
-    {
       id: 13,
-      title: "Posh",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve • After Effects",
+      title: "Posh — Fashion & Motion Edit",
+      category: lang === "es" ? "Comercial & Short-Form" : "Commercial & Short-Form",
+      tools: "DaVinci Resolve • After Effects • Ritmo Visual",
       thumbnail: "/media/videos/posh.webp",
       fallbackThumb: "/videos/Posh.gif",
       videoUrl: "https://www.youtube.com/embed/YPx42HvE8oA?autoplay=1",
@@ -217,10 +270,65 @@ export default function Home() {
       vertical: false
     },
     {
+      id: 17,
+      title: "Villa Edit — Real Estate & Lifestyle",
+      category: lang === "es" ? "Real Estate & Comercial" : "Real Estate & Commercial",
+      tools: "DaVinci Resolve • After Effects • Speed Ramping",
+      thumbnail: "/media/videos/villa-edit.webp",
+      fallbackThumb: "/videos/VILLA GIF.gif",
+      videoUrl: "https://www.youtube.com/embed/gcLXkLwXDHo?autoplay=1",
+      link: "https://youtu.be/gcLXkLwXDHo",
+      vertical: false
+    },
+    {
+      id: 8,
+      title: "Kajiri — Social Media Vertical",
+      category: lang === "es" ? "Short-Form Vertical" : "Short-Form Vertical",
+      tools: "DaVinci Resolve • Retención • Color",
+      thumbnail: "/media/videos/kajiri.webp",
+      fallbackThumb: "/videos/Kajiri.gif",
+      videoUrl: "https://www.youtube.com/embed/Yn1EKm9CG9k?autoplay=1",
+      link: "https://youtu.be/Yn1EKm9CG9k",
+      vertical: true
+    },
+    {
+      id: 9,
+      title: "Koi + — AI Visuals & Edit",
+      category: lang === "es" ? "IA & Formato Corto" : "AI & Short-Form",
+      tools: "DaVinci Resolve • AI Workflow • Sound Design",
+      thumbnail: "/media/videos/koi.webp",
+      fallbackThumb: "/videos/KOI +.gif",
+      videoUrl: "https://www.youtube.com/embed/ah9t8jODlsY?autoplay=1",
+      link: "https://youtu.be/ah9t8jODlsY",
+      vertical: false
+    },
+    {
+      id: 12,
+      title: "Metanoia — Narrative Short Film",
+      category: lang === "es" ? "Cinematografía & Narrativa" : "Cinematography & Narrative",
+      tools: "DaVinci Resolve • Premiere Pro • Color Grading",
+      thumbnail: "/media/videos/metanoia.webp",
+      fallbackThumb: "/videos/Metanoia Gif.gif",
+      videoUrl: "https://www.youtube.com/embed/UHYV2J1aJ7c?autoplay=1",
+      link: "https://youtu.be/UHYV2J1aJ7c",
+      vertical: false
+    },
+    {
+      id: 6,
+      title: "Little Things — Visual Storytelling",
+      category: lang === "es" ? "Cinematografía" : "Cinematography",
+      tools: "DaVinci Resolve • Narrative Pacing • Color",
+      thumbnail: "/media/videos/little-things.webp",
+      fallbackThumb: "/videos/Gif - Little Things.gif",
+      videoUrl: "https://www.youtube.com/embed/OsGkYNW8dHc?autoplay=1",
+      link: "https://youtu.be/OsGkYNW8dHc",
+      vertical: false
+    },
+    {
       id: 14,
-      title: "Palacio del Blumer",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve",
+      title: "Palacio del Blumer — Spot Comercial",
+      category: lang === "es" ? "Comercial & Short-Form" : "Commercial & Short-Form",
+      tools: "DaVinci Resolve • Edición Comercial",
       thumbnail: "/media/videos/palacio-del-blumer.webp",
       fallbackThumb: "/videos/Rians Palacio del Blumer.gif",
       videoUrl: "https://www.youtube.com/embed/W6sKTBekthQ?autoplay=1",
@@ -228,36 +336,14 @@ export default function Home() {
       vertical: false
     },
     {
-      id: 15,
-      title: "Style Evolves",
-      category: "Efectos especiales (SFX)",
-      tools: "DaVinci Resolve • After Effects",
-      thumbnail: "/media/videos/style-evolves.webp",
-      fallbackThumb: "/videos/Style Evolves.gif",
-      videoUrl: "https://www.youtube.com/embed/zovxASpZiDo?autoplay=1",
-      link: "https://youtu.be/zovxASpZiDo",
-      vertical: false
-    },
-    {
       id: 16,
-      title: "TEC",
-      category: "Formato Corto",
-      tools: "DaVinci Resolve",
+      title: "TEC — Dynamic Cut",
+      category: lang === "es" ? "Formato Corto" : "Short-Form",
+      tools: "DaVinci Resolve • Ritmo & Sonido",
       thumbnail: "/media/videos/tec.webp",
       fallbackThumb: "/videos/TEC.gif",
       videoUrl: "https://www.youtube.com/embed/acYCs7E2328?autoplay=1",
       link: "https://youtu.be/acYCs7E2328",
-      vertical: false
-    },
-    {
-      id: 17,
-      title: "Villa Edit",
-      category: "Comercial & Formato Corto",
-      tools: "DaVinci Resolve • After Effects",
-      thumbnail: "/media/videos/villa-edit.webp",
-      fallbackThumb: "/videos/VILLA GIF.gif",
-      videoUrl: "https://www.youtube.com/embed/gcLXkLwXDHo?autoplay=1",
-      link: "https://youtu.be/gcLXkLwXDHo",
       vertical: false
     }
   ];
@@ -291,7 +377,6 @@ export default function Home() {
     { id: 25, title: "Mafer — LeDésir Magazine", category: "editorial", file: "05_Mafer.jpg" }
   ];
 
-  // Inyección de parámetros de transformación ImageKit recomendados (?tr=w-700...)
   const photos = rawPhotos.map((p) => ({
     ...p,
     thumbUrl: `${IMAGEKIT_BASE}/${p.file}?tr=w-700,q-75,f-auto`,
@@ -355,7 +440,7 @@ export default function Home() {
         }
       `}</style>
 
-      {/* CABECERA ACCESIBLE (44PX EN MÓVIL Y MENÚ HAMBURGUESA) */}
+      {/* CABECERA ACCESIBLE CON SELECTOR DE IDIOMA (ES / EN) */}
       <header className="sticky top-0 z-40 backdrop-blur-md bg-[#141212]/90 border-b border-[#eacdc2]/15">
         <div className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
           <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-h-[44px]">
@@ -372,24 +457,42 @@ export default function Home() {
 
           {/* Menú Desktop */}
           <nav className="hidden sm:flex items-center gap-6 2xl:gap-10 text-sm 2xl:text-base font-medium text-[#eacdc2]/70">
-            <a href="#work" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">Videos</a>
-            <a href="#photography" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">Fotografía</a>
-            <a href="#about" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">Sobre Mí</a>
+            <a href="#work" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">{t.navVideos}</a>
+            <a href="#photography" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">{t.navPhotos}</a>
+            <a href="#about" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">{t.navAbout}</a>
+            
+            {/* Toggle Idioma ES | EN */}
+            <button
+              onClick={() => setLang(lang === "es" ? "en" : "es")}
+              aria-label="Cambiar idioma / Switch language"
+              className="px-3 py-1.5 rounded-full border border-[#eacdc2]/25 bg-[#eacdc2]/5 hover:border-[#eacdc2] text-xs font-mono text-[#eacdc2] transition min-h-[38px] flex items-center gap-1.5"
+            >
+              <span className={lang === "en" ? "font-bold text-white" : "opacity-50"}>EN</span>
+              <span className="opacity-30">/</span>
+              <span className={lang === "es" ? "font-bold text-white" : "opacity-50"}>ES</span>
+            </button>
+
             <a 
               href="#contacto" 
               className="inline-flex items-center px-4 py-2 rounded-full bg-[#eacdc2] text-[#141212] text-xs 2xl:text-sm font-bold hover:bg-white transition min-h-[44px]"
             >
-              Contacto
+              {t.navContact}
             </a>
           </nav>
 
           {/* Botón Menú Móvil (44px) */}
           <div className="flex sm:hidden items-center gap-2">
+            <button
+              onClick={() => setLang(lang === "es" ? "en" : "es")}
+              className="px-2.5 py-1.5 rounded-full border border-[#eacdc2]/25 bg-[#eacdc2]/5 text-xs font-mono text-[#eacdc2] min-h-[40px]"
+            >
+              {lang === "es" ? "EN" : "ES"}
+            </button>
             <a 
               href="#contacto" 
-              className="px-3 py-1.5 rounded-full bg-[#eacdc2] text-[#141212] text-xs font-bold min-h-[44px] flex items-center"
+              className="px-3 py-1.5 rounded-full bg-[#eacdc2] text-[#141212] text-xs font-bold min-h-[40px] flex items-center"
             >
-              Contacto
+              {t.navContact}
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -415,28 +518,28 @@ export default function Home() {
               onClick={() => setMobileMenuOpen(false)} 
               className="py-2.5 border-b border-[#eacdc2]/10 min-h-[44px] flex items-center"
             >
-              Videos (19)
+              {t.navVideos} ({featuredVideos.length})
             </a>
             <a 
               href="#photography" 
               onClick={() => setMobileMenuOpen(false)} 
               className="py-2.5 border-b border-[#eacdc2]/10 min-h-[44px] flex items-center"
             >
-              Fotografía (25)
+              {t.navPhotos} ({photos.length})
             </a>
             <a 
               href="#about" 
               onClick={() => setMobileMenuOpen(false)} 
               className="py-2.5 min-h-[44px] flex items-center"
             >
-              Sobre Mí & Credenciales
+              {t.navAboutMobile}
             </a>
           </div>
         )}
       </header>
 
       <main className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-10 pt-8 sm:pt-14 pb-20 sm:pb-28 space-y-20 sm:space-y-28 2xl:space-y-36">
-        {/* HERO */}
+        {/* HERO ORIENTADO A CONVERSIÓN Y RETENCIÓN */}
         <section 
           id="hero" 
           ref={heroRef}
@@ -445,26 +548,32 @@ export default function Home() {
           <div className="order-2 md:order-1 md:col-span-8 space-y-5 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#eacdc2]/10 border border-[#eacdc2]/20 text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Editor de video & Fotógrafo • CR & USA
+              {t.heroBadge}
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-6xl 2xl:text-7xl font-extrabold text-[#eacdc2] tracking-tight leading-[1.12]">
-              Edición con ritmo narrativo, color cinematográfico y fotografía fija.
+              {t.heroTitle}
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#eacdc2]/80 max-w-2xl font-light leading-relaxed">
-              Enfoque en montaje de alto impacto, retención de audiencia y dirección visual para marcas, creadores y agencias.
+              {t.heroSubtitle}
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a 
                 href="#work" 
                 className="w-full sm:w-auto text-center px-6 py-3 rounded-lg bg-[#eacdc2] text-[#141212] font-bold text-sm hover:bg-white transition min-h-[44px] flex items-center justify-center"
               >
-                Ver Videos
+                {t.ctaVideos}
+              </a>
+              <a 
+                href="#contacto" 
+                className="w-full sm:w-auto text-center px-6 py-3 rounded-lg border border-[#eacdc2]/35 bg-[#eacdc2]/10 text-[#eacdc2] font-semibold text-sm hover:border-[#eacdc2] hover:bg-[#eacdc2]/20 transition min-h-[44px] flex items-center justify-center"
+              >
+                {t.ctaContact}
               </a>
               <a 
                 href="#photography" 
-                className="w-full sm:w-auto text-center px-6 py-3 rounded-lg border border-[#eacdc2]/30 bg-[#eacdc2]/5 text-[#eacdc2] font-semibold text-sm hover:border-[#eacdc2] transition min-h-[44px] flex items-center justify-center"
+                className="w-full sm:w-auto text-center px-4 py-3 rounded-lg text-[#eacdc2]/70 font-mono text-xs hover:text-[#eacdc2] transition min-h-[44px] flex items-center justify-center"
               >
-                Ver Fotografías ({photos.length})
+                {t.ctaPhotos} ({photos.length}) →
               </a>
             </div>
           </div>
@@ -474,7 +583,7 @@ export default function Home() {
             <div className="relative p-2 sm:p-3 rounded-2xl border border-[#eacdc2]/20 bg-[#eacdc2]/5 backdrop-blur-sm w-40 sm:w-60 md:w-full max-w-[280px]">
               <img 
                 src="/media/juan-macia.webp" 
-                alt="Juan Macia" 
+                alt="Juan Macia — Video Editor & Motion Designer" 
                 loading="eager"
                 onError={(e) => { e.currentTarget.src = "/Juan profile.jpg"; }}
                 className="w-full h-auto aspect-square md:aspect-auto object-cover rounded-xl shadow-2xl"
@@ -485,12 +594,12 @@ export default function Home() {
 
         {/* CREDENCIALES: CLIENTES & PUBLICACIONES */}
         <div className="border-y border-[#eacdc2]/15 py-6 font-mono text-xs text-[#eacdc2]/70 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-[#eacdc2]/40 uppercase tracking-wider">Colaboraciones:</span>
-            <span className="text-[#eacdc2] font-medium">LOUD Digitals • GGG Marketing • Dr. Alex Dunlop • Univ. Castro Carazo</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[#eacdc2]/40 uppercase tracking-wider">{t.credsCollab}</span>
+            <span className="text-[#eacdc2] font-medium">GGG Marketing (US) • LOUD Digitals (CR) • Dr. Alex Dunlop • Univ. Castro Carazo</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[#eacdc2]/40 uppercase tracking-wider">Fotografía en:</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[#eacdc2]/40 uppercase tracking-wider">{t.credsPhoto}</span>
             <span className="text-[#eacdc2] font-medium">Malvie • Goji • Looker • Artells • Quadro • LeDésir</span>
           </div>
         </div>
@@ -499,8 +608,8 @@ export default function Home() {
         <section id="work" ref={workRef} className="scroll-section space-y-6 scroll-mt-24">
           <div className="flex items-end justify-between border-b border-[#eacdc2]/15 pb-4 gap-3">
             <div>
-              <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">Catálogo Audiovisual</p>
-              <h2 className="text-xl sm:text-2xl 2xl:text-4xl font-bold text-[#eacdc2]">Edición de Video ({featuredVideos.length})</h2>
+              <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">{t.workLabel}</p>
+              <h2 className="text-xl sm:text-2xl 2xl:text-4xl font-bold text-[#eacdc2]">{t.workTitle} ({featuredVideos.length})</h2>
             </div>
             
             <div className="flex items-center gap-2 shrink-0">
@@ -537,7 +646,7 @@ export default function Home() {
                   if (video.videoUrl) setActiveVideo(video);
                   else window.open(video.link, "_blank", "noopener,noreferrer");
                 }}
-                className="w-[82vw] sm:w-[320px] 2xl:w-[380px] snap-center sm:snap-start group relative flex flex-col rounded-xl overflow-hidden border border-[#eacdc2]/20 bg-[#eacdc2]/5 backdrop-blur-sm hover:border-[#eacdc2]/60 transition flex-shrink-0 cursor-pointer"
+                className="w-[82vw] sm:w-[340px] 2xl:w-[390px] snap-center sm:snap-start group relative flex flex-col rounded-xl overflow-hidden border border-[#eacdc2]/20 bg-[#eacdc2]/5 backdrop-blur-sm hover:border-[#eacdc2]/60 transition flex-shrink-0 cursor-pointer"
               >
                 <div className="relative aspect-video w-full overflow-hidden bg-black/50">
                   <img 
@@ -547,7 +656,7 @@ export default function Home() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 pointer-events-none"
                     loading="lazy"
                   />
-                  <div className="absolute top-2.5 left-2.5 bg-[#141212]/85 backdrop-blur-md px-2 py-0.5 rounded text-xs font-mono text-[#eacdc2] uppercase tracking-wider border border-[#eacdc2]/20">
+                  <div className="absolute top-2.5 left-2.5 bg-[#141212]/90 backdrop-blur-md px-2.5 py-0.5 rounded text-[11px] font-mono text-[#eacdc2] uppercase tracking-wider border border-[#eacdc2]/25">
                     {video.category}
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
@@ -563,7 +672,7 @@ export default function Home() {
                   <h3 className="text-sm 2xl:text-base font-semibold text-[#eacdc2] group-hover:text-white transition line-clamp-1">
                     {video.title}
                   </h3>
-                  <div className="mt-3 pt-2 border-t border-[#eacdc2]/15 text-xs font-mono text-[#eacdc2]/60 line-clamp-1">
+                  <div className="mt-3 pt-2 border-t border-[#eacdc2]/15 text-xs font-mono text-[#eacdc2]/70 line-clamp-1">
                     {video.tools}
                   </div>
                 </div>
@@ -572,12 +681,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. FOTOGRAFÍA (FILTROS EN ESPAÑOL Y MOSAICO RESPONSIVO) */}
+        {/* 2. FOTOGRAFÍA (FILTROS BILINGÜES Y MOSAICO RESPONSIVO) */}
         <section id="photography" ref={photoRef} className="scroll-section space-y-6 scroll-mt-24">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#eacdc2]/15 pb-5">
             <div>
-              <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">Frames & Stills</p>
-              <h2 className="text-xl sm:text-2xl 2xl:text-4xl font-bold text-[#eacdc2]">Fotografía Seleccionada</h2>
+              <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">{t.photoLabel}</p>
+              <h2 className="text-xl sm:text-2xl 2xl:text-4xl font-bold text-[#eacdc2]">{t.photoTitle}</h2>
             </div>
 
             {/* Filtros accesibles con altura táctil */}
@@ -586,25 +695,25 @@ export default function Home() {
                 onClick={() => setFilter("all")}
                 className={`px-3 py-2 rounded-md transition min-h-[44px] flex items-center ${filter === "all" ? "bg-[#eacdc2] text-[#141212] font-bold" : "text-[#eacdc2]/70 hover:text-[#eacdc2]"}`}
               >
-                Todas ({photos.length})
+                {t.filterAll} ({photos.length})
               </button>
               <button
                 onClick={() => setFilter("editorial")}
                 className={`px-3 py-2 rounded-md transition min-h-[44px] flex items-center ${filter === "editorial" ? "bg-[#eacdc2] text-[#141212] font-bold" : "text-[#eacdc2]/70 hover:text-[#eacdc2]"}`}
               >
-                Editorial
+                {t.filterEditorial}
               </button>
               <button
                 onClick={() => setFilter("commercial")}
                 className={`px-3 py-2 rounded-md transition min-h-[44px] flex items-center ${filter === "commercial" ? "bg-[#eacdc2] text-[#141212] font-bold" : "text-[#eacdc2]/70 hover:text-[#eacdc2]"}`}
               >
-                Comercial
+                {t.filterCommercial}
               </button>
               <button
                 onClick={() => setFilter("portrait")}
                 className={`px-3 py-2 rounded-md transition min-h-[44px] flex items-center ${filter === "portrait" ? "bg-[#eacdc2] text-[#141212] font-bold" : "text-[#eacdc2]/70 hover:text-[#eacdc2]"}`}
               >
-                Retrato
+                {t.filterPortrait}
               </button>
             </div>
           </div>
@@ -631,41 +740,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. SOBRE MÍ */}
+        {/* 3. SOBRE MÍ (OPTIMIZADO PARA CLIENTES INTERNACIONALES) */}
         <section id="about" ref={aboutRef} className="scroll-section border-t border-[#eacdc2]/15 pt-14 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 scroll-mt-24">
           <div className="md:col-span-4 space-y-3">
-            <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">Perfil Profesional</p>
-            <h2 className="text-2xl sm:text-3xl 2xl:text-5xl font-bold text-[#eacdc2] tracking-tight">Sobre Mí</h2>
+            <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">{t.aboutLabel}</p>
+            <h2 className="text-2xl sm:text-3xl 2xl:text-5xl font-bold text-[#eacdc2] tracking-tight">{t.aboutTitle}</h2>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#eacdc2]/10 border border-[#eacdc2]/20 text-xs font-mono text-[#eacdc2]">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              Disponible para proyectos
+              {t.aboutBadge}
             </div>
           </div>
 
           <div className="md:col-span-8 space-y-6 text-[#eacdc2]/90 leading-relaxed font-light text-sm sm:text-base 2xl:text-lg">
+            <p>{t.aboutP1}</p>
             <p>
-              Editor de video y fotógrafo enfocado en narrativa cinematográfica y formatos digitales de alto impacto. Integro técnicas de corte rítmico, diseño sonoro inmersivo y corrección de color avanzada para dotar a cada proyecto de peso, identidad y ritmo visual.
-            </p>
-            <p>
-              Actualmente colaboro con agencias y marcas internacionales como <strong className="font-semibold text-[#eacdc2]">LOUD Digitals</strong> y <strong className="font-semibold text-[#eacdc2]">GGG Marketing</strong>, desarrollando piezas audiovisuales orientadas a audiencias en <strong className="font-semibold text-[#eacdc2]">Costa Rica</strong> y <strong className="font-semibold text-[#eacdc2]">Estados Unidos</strong>, optimizadas para retención sostenida y conversión.
+              {t.aboutP2_1}
+              <strong className="font-semibold text-[#eacdc2]">LOUD Digitals</strong>
+              {t.aboutP2_2}
+              <strong className="font-semibold text-[#eacdc2]">GGG Marketing</strong>
+              {t.aboutP2_3}
+              <strong className="font-semibold text-[#eacdc2]">Costa Rica</strong>
+              {t.aboutP2_4}
+              <strong className="font-semibold text-[#eacdc2]">{lang === "es" ? "Estados Unidos" : "United States"}</strong>
+              {t.aboutP2_5}
             </p>
 
             <div className="pt-6 border-t border-[#eacdc2]/15 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 rounded-xl border border-[#eacdc2]/15 bg-[#eacdc2]/[0.03]">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/50 block">Especialidad</span>
-                <span className="text-sm font-semibold text-[#eacdc2] mt-1 block">Montaje de Retención & Color</span>
+                <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/50 block">{t.specTitle}</span>
+                <span className="text-sm font-semibold text-[#eacdc2] mt-1 block">{t.specValue}</span>
               </div>
               <div className="p-4 rounded-xl border border-[#eacdc2]/15 bg-[#eacdc2]/[0.03]">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/50 block">Herramientas</span>
+                <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/50 block">{t.toolsTitle}</span>
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   <span className="px-2 py-0.5 rounded bg-[#141212] border border-[#eacdc2]/20 text-xs font-mono">DaVinci Resolve</span>
-                  <span className="px-2 py-0.5 rounded bg-[#141212] border border-[#eacdc2]/20 text-xs font-mono">Premiere Pro</span>
                   <span className="px-2 py-0.5 rounded bg-[#141212] border border-[#eacdc2]/20 text-xs font-mono">After Effects</span>
+                  <span className="px-2 py-0.5 rounded bg-[#141212] border border-[#eacdc2]/20 text-xs font-mono">Premiere Pro</span>
+                  <span className="px-2 py-0.5 rounded bg-[#141212] border border-[#eacdc2]/20 text-xs font-mono">Photoshop</span>
                 </div>
               </div>
               <div className="p-4 rounded-xl border border-[#eacdc2]/15 bg-[#eacdc2]/[0.03]">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/50 block">Alcance</span>
-                <span className="text-sm font-semibold text-[#eacdc2] mt-1 block">Remoto (CR • USA • Global)</span>
+                <span className="text-xs font-mono uppercase tracking-widest text-[#eacdc2]/50 block">{t.reachTitle}</span>
+                <span className="text-sm font-semibold text-[#eacdc2] mt-1 block">{t.reachValue}</span>
+                <span className="text-xs font-mono text-emerald-400/90 mt-1 block">{t.reachLang}</span>
               </div>
             </div>
           </div>
@@ -710,7 +827,7 @@ export default function Home() {
                 onClick={() => setSelectedPhotoIndex(null)}
                 className="px-4 py-2 bg-[#eacdc2]/15 border border-[#eacdc2]/30 rounded text-[#eacdc2] font-bold hover:bg-[#eacdc2] hover:text-[#141212] transition min-h-[44px]"
               >
-                Cerrar (Esc)
+                {t.closeEsc}
               </button>
             </div>
           </div>
@@ -749,13 +866,13 @@ export default function Home() {
               onClick={() => setActiveVideo(null)}
               className="absolute top-3 right-3 px-3 py-1.5 rounded-md bg-black/80 text-white font-mono text-xs border border-white/20 hover:bg-white hover:text-black transition min-h-[44px]"
             >
-              Cerrar (Esc)
+              {t.closeEsc}
             </button>
           </div>
         </div>
       )}
 
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }
