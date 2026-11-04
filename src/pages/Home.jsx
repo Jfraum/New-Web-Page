@@ -42,7 +42,7 @@ const COPY = {
     toolsTitle: "Stack Técnico",
     reachTitle: "Alcance & Idiomas",
     reachValue: "Remoto (USA • CR • Global)",
-    reachLang: "Bilingüe: Inglés (C2) & Español",
+    reachLang: "Bilingual: Inglés (C2) & Español",
     closeEsc: "Cerrar (Esc)"
   },
   en: {
@@ -87,20 +87,43 @@ const COPY = {
 };
 
 export default function Home() {
-  // Idioma ("es" por defecto, cambiable a "en" con un clic en el header)
-// Estado para controlar la visibilidad del navbar dinámico
+  // Estado para la barra de navegación inteligente
   const [navVisible, setNavVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
 
+  // Idioma
+  const [lang, setLang] = useState("es");
+  const t = COPY[lang];
+
+  // Filtros y modales
+  const [filter, setFilter] = useState("all");
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
+  const [activeVideo, setActiveVideo] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Referencias para observador y carrusel
+  const heroRef = useRef(null);
+  const workRef = useRef(null);
+  const photoRef = useRef(null);
+  const aboutRef = useRef(null);
+  const sliderRef = useRef(null);
+  const touchStartX = useRef(0);
+
+  // Lógica de scroll para mostrar/ocultar el navbar
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Si baja más de 80px y el scroll va hacia abajo -> oculta el nav
+      // Estado de fondo más oscuro al bajar de 20px
+      setIsScrolled(currentScrollY > 20);
+
+      // Si baja más de 80px y el usuario continúa hacia abajo -> oculta el nav
       if (currentScrollY > 80 && currentScrollY > lastScrollY.current) {
         setNavVisible(false);
+        setMobileMenuOpen(false); // Cierra menú desplegable si está abierto
       } else {
-        // Si sube -> muestra el nav
+        // Al subir -> reaparece inmediatamente
         setNavVisible(true);
       }
 
@@ -110,22 +133,6 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const [lang, setLang] = useState("es");
-  const t = COPY[lang];
-
-  const [filter, setFilter] = useState("all");
-  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
-  const [activeVideo, setActiveVideo] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Referencias para observador y sliders
-  const heroRef = useRef(null);
-  const workRef = useRef(null);
-  const photoRef = useRef(null);
-  const aboutRef = useRef(null);
-  const sliderRef = useRef(null);
-  const touchStartX = useRef(0);
 
   const scrollVideos = (direction) => {
     if (sliderRef.current) {
@@ -140,7 +147,7 @@ export default function Home() {
     }
   };
 
-  // IntersectionObserver suave
+  // IntersectionObserver para entradas suaves en scroll
   useEffect(() => {
     const sections = [heroRef.current, workRef.current, photoRef.current, aboutRef.current];
     const observer = new IntersectionObserver(
@@ -158,7 +165,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // 1. VIDEOS ORIENTADOS A RESULTADOS, CASOS DE ESTUDIO Y STACK TÉCNICO COMPLETO
+  // 1. VIDEOS DESTACADOS
   const featuredVideos = [
     {
       id: 18,
@@ -185,11 +192,11 @@ export default function Home() {
     {
       id: 20,
       title: lang === "es" ? "Dr. Alex Dunlop — Reels de Alta Retención" : "Dr. Alex Dunlop — High-Retention Reels",
-      category: lang === "es" ? "Short-Form Vertical" : "Short-Form Vertical",
+      category: "Short-Form Vertical",
       tools: "DaVinci Resolve • Visual Hooks • Ritmo Narrativo",
       thumbnail: "/media/videos/es-sciatica.webp",
       fallbackThumb: "/videos/ES Sciatica wk55 gif.gif",
-      videoUrl: null, // Abre en enlace al ser de Instagram
+      videoUrl: null,
       link: "https://www.instagram.com/dralexdunlop.es/",
       vertical: true
     },
@@ -218,7 +225,7 @@ export default function Home() {
     {
       id: 15,
       title: "Style Evolves — VFX & Motion",
-      category: lang === "es" ? "VFX & Motion Graphics" : "VFX & Motion Graphics",
+      category: "VFX & Motion Graphics",
       tools: "After Effects • DaVinci Resolve • Sound FX",
       thumbnail: "/media/videos/style-evolves.webp",
       fallbackThumb: "/videos/Style Evolves.gif",
@@ -306,7 +313,7 @@ export default function Home() {
     {
       id: 8,
       title: "Kajiri — Social Media Vertical",
-      category: lang === "es" ? "Short-Form Vertical" : "Short-Form Vertical",
+      category: "Short-Form Vertical",
       tools: "DaVinci Resolve • Retención • Color",
       thumbnail: "/media/videos/kajiri.webp",
       fallbackThumb: "/videos/Kajiri.gif",
@@ -339,7 +346,7 @@ export default function Home() {
     {
       id: 6,
       title: "Little Things — Visual Storytelling",
-      category: lang === "es" ? "Cinematografía" : "Cinematography",
+      category: "Cinematografía",
       tools: "DaVinci Resolve • Narrative Pacing • Color",
       thumbnail: "/media/videos/little-things.webp",
       fallbackThumb: "/videos/Gif - Little Things.gif",
@@ -361,7 +368,7 @@ export default function Home() {
     {
       id: 16,
       title: "TEC — Dynamic Cut",
-      category: lang === "es" ? "Formato Corto" : "Short-Form",
+      category: "Formato Corto",
       tools: "DaVinci Resolve • Ritmo & Sonido",
       thumbnail: "/media/videos/tec.webp",
       fallbackThumb: "/videos/TEC.gif",
@@ -419,7 +426,7 @@ export default function Home() {
     setSelectedPhotoIndex((prev) => (prev < filteredPhotos.length - 1 ? prev + 1 : 0));
   };
 
-  // Controles de teclado para galería y video
+  // Controles de teclado
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
@@ -437,7 +444,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#141212] text-[#eacdc2] antialiased selection:bg-[#eacdc2] selection:text-[#141212] overflow-x-hidden">
-      {/* ANIMACIONES & SOPORTE PREFERS-REDUCED-MOTION */}
+      {/* ANIMACIONES & ACCESIBILIDAD */}
       <style>{`
         .scroll-section {
           opacity: 0;
@@ -463,15 +470,17 @@ export default function Home() {
         }
       `}</style>
 
-      {/* CABECERA ACCESIBLE CON SELECTOR DE IDIOMA (ES / EN) */}
-      {/* NAVEGACIÓN DINÁMICA CON SMART SCROLL */}
+      {/* CABECERA DINÁMICA FLOTANTE (SMART NAVBAR) */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-[#141212]/90 border-b border-[#eacdc2]/15 transition-transform duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           navVisible ? "translate-y-0" : "-translate-y-full"
+        } ${
+          isScrolled
+            ? "bg-[#141212]/95 backdrop-blur-md border-b border-[#eacdc2]/15 shadow-lg shadow-black/40"
+            : "bg-[#141212]/80 backdrop-blur-sm border-b border-[#eacdc2]/10"
         }`}
       >
         <div className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-          {/* ... resto de tu logo y enlaces ... */}
           <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-h-[44px]">
             <img 
               src="/logo.png" 
@@ -490,7 +499,7 @@ export default function Home() {
             <a href="#photography" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">{t.navPhotos}</a>
             <a href="#about" className="hover:text-[#eacdc2] transition min-h-[44px] flex items-center">{t.navAbout}</a>
             
-            {/* Toggle Idioma ES | EN */}
+            {/* Toggle de Idioma ES | EN */}
             <button
               onClick={() => setLang(lang === "es" ? "en" : "es")}
               aria-label="Cambiar idioma / Switch language"
@@ -509,7 +518,7 @@ export default function Home() {
             </a>
           </nav>
 
-          {/* Botón Menú Móvil (44px) */}
+          {/* Botón Menú Móvil */}
           <div className="flex sm:hidden items-center gap-2">
             <button
               onClick={() => setLang(lang === "es" ? "en" : "es")}
@@ -567,12 +576,13 @@ export default function Home() {
         )}
       </header>
 
-      <main className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-10 pt-8 sm:pt-14 pb-20 sm:pb-28 space-y-20 sm:space-y-28 2xl:space-y-36">
-        {/* HERO ORIENTADO A CONVERSIÓN Y RETENCIÓN */}
+      {/* CONTENIDO PRINCIPAL CON OFFSET SUPERIOR PARA LA BARRA FLOTANTE */}
+      <main className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-10 pt-24 sm:pt-32 pb-20 sm:pb-28 space-y-20 sm:space-y-28 2xl:space-y-36">
+        {/* HERO */}
         <section 
           id="hero" 
           ref={heroRef}
-          className="scroll-section scroll-mt-24 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center pt-2 sm:pt-4"
+          className="scroll-section scroll-mt-28 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center pt-2 sm:pt-4"
         >
           <div className="order-2 md:order-1 md:col-span-8 space-y-5 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#eacdc2]/10 border border-[#eacdc2]/20 text-xs font-mono">
@@ -607,7 +617,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Foto de perfil optimizada con fallback */}
+          {/* Foto de perfil optimizada */}
           <div className="order-1 md:order-2 md:col-span-4 flex justify-center md:justify-end">
             <div className="relative p-2 sm:p-3 rounded-2xl border border-[#eacdc2]/20 bg-[#eacdc2]/5 backdrop-blur-sm w-40 sm:w-60 md:w-full max-w-[280px]">
               <img 
@@ -621,7 +631,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CREDENCIALES: CLIENTES & PUBLICACIONES */}
+        {/* CREDENCIALES */}
         <div className="border-y border-[#eacdc2]/15 py-6 font-mono text-xs text-[#eacdc2]/70 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-[#eacdc2]/40 uppercase tracking-wider">{t.credsCollab}</span>
@@ -633,8 +643,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 1. VIDEOS EN CARRUSEL CON MODAL EMBEBIDO */}
-        <section id="work" ref={workRef} className="scroll-section space-y-6 scroll-mt-24">
+        {/* 1. SECCIÓN VIDEOS */}
+        <section id="work" ref={workRef} className="scroll-section space-y-6 scroll-mt-28">
           <div className="flex items-end justify-between border-b border-[#eacdc2]/15 pb-4 gap-3">
             <div>
               <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">{t.workLabel}</p>
@@ -710,15 +720,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. FOTOGRAFÍA (FILTROS BILINGÜES Y MOSAICO RESPONSIVO) */}
-        <section id="photography" ref={photoRef} className="scroll-section space-y-6 scroll-mt-24">
+        {/* 2. SECCIÓN FOTOGRAFÍA */}
+        <section id="photography" ref={photoRef} className="scroll-section space-y-6 scroll-mt-28">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#eacdc2]/15 pb-5">
             <div>
               <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">{t.photoLabel}</p>
               <h2 className="text-xl sm:text-2xl 2xl:text-4xl font-bold text-[#eacdc2]">{t.photoTitle}</h2>
             </div>
 
-            {/* Filtros accesibles con altura táctil */}
             <div className="flex flex-wrap items-center gap-2 bg-[#eacdc2]/5 p-1 rounded-lg border border-[#eacdc2]/20 text-xs font-medium">
               <button
                 onClick={() => setFilter("all")}
@@ -769,8 +778,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. SOBRE MÍ (OPTIMIZADO PARA CLIENTES INTERNACIONALES) */}
-        <section id="about" ref={aboutRef} className="scroll-section border-t border-[#eacdc2]/15 pt-14 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 scroll-mt-24">
+        {/* 3. SECCIÓN SOBRE MÍ */}
+        <section id="about" ref={aboutRef} className="scroll-section border-t border-[#eacdc2]/15 pt-14 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 scroll-mt-28">
           <div className="md:col-span-4 space-y-3">
             <p className="text-xs font-mono uppercase text-[#eacdc2]/60 tracking-wider">{t.aboutLabel}</p>
             <h2 className="text-2xl sm:text-3xl 2xl:text-5xl font-bold text-[#eacdc2] tracking-tight">{t.aboutTitle}</h2>
@@ -818,7 +827,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* VISOR MODAL LIGHTBOX CON NAVEGACIÓN Y TÁCTIL */}
+      {/* VISOR MODAL LIGHTBOX */}
       {selectedPhotoIndex !== null && (
         <div 
           onClick={() => setSelectedPhotoIndex(null)}
@@ -830,7 +839,6 @@ export default function Home() {
           }}
           className="fixed inset-0 z-50 bg-[#141212]/95 backdrop-blur-md flex items-center justify-center p-4 select-none"
         >
-          {/* Botón Anterior */}
           <button
             onClick={showPrevPhoto}
             aria-label="Foto anterior"
@@ -841,7 +849,6 @@ export default function Home() {
             </svg>
           </button>
 
-          {/* Imagen Activa */}
           <div onClick={(e) => e.stopPropagation()} className="relative max-w-4xl max-h-[88vh] flex flex-col items-center">
             <img
               src={filteredPhotos[selectedPhotoIndex].fullUrl}
@@ -861,7 +868,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Botón Siguiente */}
           <button
             onClick={showNextPhoto}
             aria-label="Foto siguiente"
