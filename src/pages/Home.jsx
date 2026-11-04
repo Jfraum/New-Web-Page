@@ -88,6 +88,29 @@ const COPY = {
 
 export default function Home() {
   // Idioma ("es" por defecto, cambiable a "en" con un clic en el header)
+// Estado para controlar la visibilidad del navbar dinámico
+  const [navVisible, setNavVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Si baja más de 80px y el scroll va hacia abajo -> oculta el nav
+      if (currentScrollY > 80 && currentScrollY > lastScrollY.current) {
+        setNavVisible(false);
+      } else {
+        // Si sube -> muestra el nav
+        setNavVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const [lang, setLang] = useState("es");
   const t = COPY[lang];
 
@@ -441,8 +464,14 @@ export default function Home() {
       `}</style>
 
       {/* CABECERA ACCESIBLE CON SELECTOR DE IDIOMA (ES / EN) */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-[#141212]/90 border-b border-[#eacdc2]/15">
+      {/* NAVEGACIÓN DINÁMICA CON SMART SCROLL */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-[#141212]/90 border-b border-[#eacdc2]/15 transition-transform duration-300 ${
+          navVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
+          {/* ... resto de tu logo y enlaces ... */}
           <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-h-[44px]">
             <img 
               src="/logo.png" 
