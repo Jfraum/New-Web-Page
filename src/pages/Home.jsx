@@ -165,6 +165,18 @@ export default function Home() {
   // 1. VIDEOS DESTACADOS (CON EL VIDEO DE 11K VISTAS EN EL PRIMER PUESTO)
   const featuredVideos = [
     {
+      id: "Face First Golf",
+      title: lang === "es" ? "¡Deja de intentar hacer el swing como si tuvieras 25 años! (Consejos de swing de golf para golfistas sénior)" : "Stop Trying to Swing Like You're 25! (Senior Golf Swing Tips)",
+      category: lang === "es" ? "YouTube & Retención" : "YouTube & Retention",
+      tools: "DaVinci Resolve • Motion Graphics",
+      badge: "15+ Views", // Insignia de prueba social
+      thumbnail: "/media/videos/10-20-26 Stop Trying to Swing Like You're 25.gif.webp",
+      fallbackThumb: "/videos/10-20-26 Stop Trying to Swing Like You're 25.gif", // Corregido: sin prefijo "public"
+      videoUrl: "https://www.youtube.com/embed/xT0Ks0d_5MQ?autoplay=1",
+      link: "https://youtu.be/xT0Ks0d_5MQ",
+      vertical: false
+    },
+    {
       id: "dunlop-yt-en",
       title: lang === "es" ? "Dr. Alex Dunlop — YouTube Long-Form (Salud)" : "Dr. Alex Dunlop — YouTube Long-Form (Health)",
       category: lang === "es" ? "YouTube & Retención" : "YouTube & Retention",
@@ -389,6 +401,10 @@ export default function Home() {
 
   // 2. FOTOGRAFÍAS
   const rawPhotos = [
+    { id: 25, title: "Mafer — LeDésir Magazine", category: "editorial", file: "05_Mafer.jpg" },
+        { id: 26, title: "Mafer II", category: "Portrait", file: "_MG_3845.jpg" },
+            { id: 27, title: "Aless III", category: "Portrait", file: "IMG_0438.jpg" },
+                { id: 28, title: "Mafer III", category: "Portrait", file: "IMG_1828%202.jpg" },
     { id: 1, title: "Virino — Malvie Magazine", category: "editorial", file: "04_This_is_VIRINO_image3_MALVIE_Magazine-140.jpg" },
     { id: 2, title: "Dulces Caprichosos", category: "commercial", file: "_MG_1117.jpg" },
     { id: 3, title: "Virino II — Malvie Magazine", category: "editorial", file: "04_This_is_VIRINO_image7_MALVIE_Magazine-142.jpg" },
@@ -403,7 +419,7 @@ export default function Home() {
     { id: 12, title: "Dary", category: "portrait", file: "_MG_2615.jpg" },
     { id: 13, title: "Glerifer II", category: "portrait", file: "_MG_2592%203.jpg" },
     { id: 14, title: "Metro — Goji Magazine", category: "editorial", file: "Goji%2082V1_15.jpg" },
-    { id: 15, title: "Mafer II", category: "portrait", file: "_MG_0793.jpg" },
+    { id: 15, title: "Mafer II", category: "portrait", file: "_MG_6002.jpg" },
     { id: 16, title: "Sun Model — Laura", category: "portrait", file: "portada.jpg" },
     { id: 17, title: "Cascanueces", category: "commercial", file: "_MG_5480.jpg" },
     { id: 18, title: "Ana II", category: "commercial", file: "_MG_0243.jpg" },
@@ -411,9 +427,9 @@ export default function Home() {
     { id: 20, title: "Sun Model — Laura II", category: "portrait", file: "_MG_0687.jpg" },
     { id: 21, title: "Bons", category: "commercial", file: "IMG_6651.jpg" },
     { id: 22, title: "Mid 2000s — Artells Magazine", category: "editorial", file: "2041-12%20copy.jpg" },
-    { id: 23, title: "Neon Demons — Quadro Magazine", category: "editorial", file: "238-29%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.jpg" },
-    { id: 24, title: "Neon Demons II — Quadro Magazine", category: "editorial", file: "238-26%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.jpg" },
-    { id: 25, title: "Mafer — LeDésir Magazine", category: "editorial", file: "05_Mafer.jpg" }
+    { id: 23, title: "Neon Demons — Quadro Magazine", category: "editorial", file: "IMG_4029.jpg" },
+    { id: 24, title: "Laura", category: "Portrait", file: "238-26%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.jpg" },
+    
   ];
 
   const photos = rawPhotos.map((p) => ({
